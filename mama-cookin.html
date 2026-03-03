@@ -215,21 +215,23 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
   <div class="logo" onclick="scrollTo(0,0)">🍲 Mama Cookin</div>
   <ul class="navl">
     <li><a href="#packages">Packages</a></li>
-    <li><a href="#menu">À La Carte</a></li>
+    <li><a href="#menu">Individual Dishes</a></li>
     <li><a href="#how">How It Works</a></li>
     <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="ncart" onclick="toggleCart()">🛒 Cart <span class="cc" id="cartCount">0</span></button>
 </nav>
 
 <section class="hero">
+  <div style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0057B7,#FFD700);padding:9px 26px;border-radius:30px;font-size:.85rem;font-weight:800;color:white;margin-bottom:18px;text-transform:uppercase;letter-spacing:.12em;box-shadow:0 6px 28px rgba(0,87,183,.45)">🇺🇦 Authentic Ukrainian Home Cooking</div>
   <div class="hbadge">🚚 Next Delivery: Tomorrow Evening</div>
-  <h1>Home-Cooked <span>Meals</span><br>Delivered Fresh</h1>
-  <p>Real food made from scratch every morning — no preservatives, no shortcuts. Just like mama used to make.</p>
+  <h1>Home-Cooked <span>Ukrainian</span><br>Food, Delivered Fresh</h1>
+  <p>Real Ukrainian recipes made from scratch every morning — no preservatives, no shortcuts. Borsch, Chicken Kiev, Syrniki and more, just like mama used to make.</p>
   <div class="hnote">📅 Order today — earliest delivery is <strong>tomorrow</strong>. We cook everything fresh each morning!</div>
   <div class="hcta">
     <a href="#packages" class="btnp">🍽️ View Packages</a>
-    <a href="#menu" class="btns">Browse À La Carte →</a>
+    <a href="#menu" class="btns">Browse Individual Dishes →</a>
   </div>
   <div class="hstats">
     <div class="stat"><div class="sn">5,000+</div><div class="sl">Happy Families</div></div>
@@ -250,7 +252,7 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
 
 <section class="msec" id="menu">
   <div class="wrap">
-    <div class="slbl">À La Carte</div>
+    <div class="slbl">Individual Dishes</div>
     <div class="stitle">Build Your Own Order</div>
     <div class="ssub">Pick exactly what you want. Min order £20. Free delivery over £55.</div>
     <div class="mcats" id="menuCats"></div>
@@ -284,6 +286,18 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
   </div>
 </section>
 
+<section id="contact" style="background:linear-gradient(135deg,#003f8a 0%,#0057B7 50%,#FFD700 100%);padding:68px 0">
+  <div class="wrap" style="max-width:700px;text-align:center">
+    <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:rgba(255,255,255,.7);font-weight:600;margin-bottom:9px">Get In Touch</div>
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;color:white;line-height:1.15;margin-bottom:14px">Contact Us 🇺🇦</div>
+    <p style="color:rgba(255,255,255,.8);font-size:.97rem;line-height:1.7;margin-bottom:34px">Have a question, special request, or need help with your order?<br>We'd love to hear from you — call or email anytime.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="tel:07928286991" style="display:inline-flex;align-items:center;gap:9px;background:white;color:#0057B7;border:none;padding:15px 30px;border-radius:50px;cursor:pointer;font-family:'Jost',sans-serif;font-size:.97rem;font-weight:700;text-decoration:none;transition:all .2s;box-shadow:0 4px 18px rgba(0,0,0,.2)">📞 07928 286 991</a>
+      <a href="mailto:caspi.ready.work" style="display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.15);color:white;border:2px solid rgba(255,255,255,.5);padding:15px 30px;border-radius:50px;cursor:pointer;font-family:'Jost',sans-serif;font-size:.97rem;font-weight:700;text-decoration:none;transition:all .2s">✉️ caspi.ready.work</a>
+    </div>
+  </div>
+</section>
+
 <section id="faq" class="sec">
   <div class="wrap" style="max-width:740px">
     <div class="slbl" style="text-align:center">Questions</div>
@@ -295,10 +309,10 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
 <footer>
   <div class="ftlogo">🍲 Mama Cookin</div>
   <div class="ftlinks">
-    <a href="#packages">Packages</a><a href="#menu">Menu</a><a href="#how">How It Works</a><a href="#faq">FAQ</a>
+    <a href="#packages">Packages</a><a href="#menu">Individual Dishes</a><a href="#how">How It Works</a><a href="#contact">Contact</a><a href="#faq">FAQ</a>
   </div>
-  <p style="font-size:.78rem">© 2025 Mama Cookin. Home-cooked food, delivered with love.</p>
-  <p style="margin-top:6px;font-size:.72rem">📞 0800 MAMA COOK &nbsp;|&nbsp; 📧 hello@mamacookin.co.uk</p>
+  <p style="font-size:.78rem">© 2025 Mama Cookin. Authentic Ukrainian home-cooked food, delivered with love.</p>
+  <p style="margin-top:6px;font-size:.72rem">📞 07928 286 991 &nbsp;|&nbsp; ✉️ caspi.ready.work</p>
 </footer>
 
 <!-- CART SIDEBAR -->
@@ -680,6 +694,25 @@ function addBundleToCart(){
 
 // ─── MENU ────────────────────────────────────────────────────────────────────
 let activeCat='all';
+const selSizes={};
+function r50(n){return Math.round(n*2)/2;}
+function dblW(w){return w.replace(/(\d+)/,m=>String(parseInt(m)*2));}
+function getItemSizes(item){
+  const p=item.price,w=item.weight;
+  if(w==='900g') return {sizes:[{label:'Small',weight:'300g',price:r50(p/3)},{label:'Medium',weight:'600g',price:r50(p*2/3)},{label:'Large',weight:'900g',price:p}],def:2};
+  if(w==='600g') return {sizes:[{label:'Small',weight:'300g',price:r50(p/2)},{label:'Medium',weight:'600g',price:p},{label:'Large',weight:'900g',price:r50(p*1.5)}],def:1};
+  if(w==='1L')   return {sizes:[{label:'Small',weight:'500ml',price:r50(p*0.6)},{label:'Large',weight:'1L',price:p}],def:1};
+  if(['750g','720g','650g','500g','400g'].includes(w)){
+    const hw={'750g':'400g','720g':'360g','650g':'350g','500g':'250g','400g':'200g'}[w];
+    return {sizes:[{label:'Small',weight:hw,price:r50(p*0.55)},{label:'Large',weight:w,price:p}],def:1};
+  }
+  if(['300g','350g','360g','380g','280g','250g','320g'].includes(w))
+    return {sizes:[{label:'×1',weight:w,price:p},{label:'×2',weight:dblW(w),price:r50(p*1.85)}],def:0};
+  if(['180g','200g','220g'].includes(w))
+    return {sizes:[{label:'1 pc',weight:w,price:p},{label:'2 pcs',weight:dblW(w),price:r50(p*1.85)}],def:0};
+  return {sizes:[{label:'Std',weight:w,price:p}],def:0};
+}
+function selSize(id,idx){selSizes[id]=idx;renderMenuGrid();}
 function renderMenuCats(){
   document.getElementById('menuCats').innerHTML=CATS.map(c=>`<button class="cbt ${c.key===activeCat?'active':''}" onclick="filterMenu('${c.key}',this)">${c.icon} ${c.label}</button>`).join('');
 }
@@ -692,27 +725,42 @@ function filterMenu(cat,btn){
 function renderMenuGrid(){
   const items=activeCat==='all'?ALL_ITEMS:ALL_ITEMS.filter(i=>i.cat===activeCat);
   document.getElementById('menuGrid').innerHTML=items.map(item=>{
-    const ci=cart.find(c=>c.id===item.id), qty=ci?ci.qty:0;
+    const {sizes,def}=getItemSizes(item);
+    const sidx=selSizes[item.id]!==undefined?selSizes[item.id]:def;
+    const sz=sizes[sidx];
+    const cartId=`${item.id}-${sidx}`;
+    const ci=cart.find(c=>c.id===cartId),qty=ci?ci.qty:0;
+    const szBtns=sizes.length>1?`<div style="display:flex;gap:4px;margin-top:9px;flex-wrap:wrap">${sizes.map((s,i)=>`<button onclick="selSize('${item.id}',${i})" style="padding:3px 10px;border-radius:20px;border:1.5px solid ${i===sidx?'var(--terracotta)':'var(--border)'};background:${i===sidx?'var(--terracotta)':'white'};color:${i===sidx?'white':'var(--lt)'};font-size:.66rem;font-weight:600;cursor:pointer;font-family:Jost,sans-serif;line-height:1.9;transition:all .15s">${s.label} <span style="font-weight:400;opacity:.8">${s.weight}</span></button>`).join('')}</div>`:'';
     return `<div class="mi">
-      <div class="miimg">${item.emoji}${item.badge?`<span class="mbadge">${item.badge}</span>`:''}</div>
+      <div class="miimg">
+        <span style="font-size:3rem">${item.emoji}</span>
+        <img src="food-images/${item.id}.jpg" alt="${item.name}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1" onerror="this.remove()">
+        ${item.badge?`<span class="mbadge" style="z-index:2">${item.badge}</span>`:''}
+      </div>
       <div class="mibody">
         <div class="miname">${item.name}</div>
         <div class="midesc">${item.desc}</div>
+        ${szBtns}
         <div class="mifoot">
-          <div><div class="mip">£${item.price.toFixed(2)}</div><div class="miw">${item.weight}</div></div>
-          ${qty===0?`<button class="addbtn" onclick="addItem('${item.id}')">+</button>`:`<div class="qc"><button onclick="chgQty('${item.id}',-1)">−</button><span class="qn">${qty}</span><button onclick="chgQty('${item.id}',1)">+</button></div>`}
+          <div><div class="mip">£${sz.price.toFixed(2)}</div><div class="miw">${sz.weight}</div></div>
+          ${qty===0?`<button class="addbtn" onclick="addItem('${item.id}')">+</button>`:`<div class="qc"><button onclick="chgQty('${cartId}',-1)">−</button><span class="qn">${qty}</span><button onclick="chgQty('${cartId}',1)">+</button></div>`}
         </div>
       </div>
     </div>`;
   }).join('');
 }
 function addItem(id){
-  const item=ALL_ITEMS.find(i=>i.id===id), ex=cart.find(c=>c.id===id);
-  if(ex) ex.qty++; else cart.push({...item,qty:1});
+  const item=ALL_ITEMS.find(i=>i.id===id);
+  const {sizes,def}=getItemSizes(item);
+  const sidx=selSizes[id]!==undefined?selSizes[id]:def;
+  const sz=sizes[sidx];
+  const cartId=`${id}-${sidx}`;
+  const ex=cart.find(c=>c.id===cartId);
+  if(ex) ex.qty++; else cart.push({...item,id:cartId,baseId:id,price:sz.price,size:sz.label,sizeWeight:sz.weight,qty:1});
   updateCart(); renderMenuGrid(); showNotif(`${item.emoji} ${item.name} added!`);
 }
-function chgQty(id,d){
-  const idx=cart.findIndex(c=>c.id===id); if(idx===-1) return;
+function chgQty(cartId,d){
+  const idx=cart.findIndex(c=>c.id===cartId); if(idx===-1) return;
   cart[idx].qty+=d; if(cart[idx].qty<=0) cart.splice(idx,1);
   updateCart(); renderMenuGrid();
 }
@@ -736,7 +784,8 @@ function updateCart(){
         <div class="ciemoji">${item.emoji}</div>
         <div class="ciinfo">
           <div class="ciname">${item.name}</div>
-          ${item.desc?`<div class="cisub">${item.desc}</div>`:''}
+          ${item.size?`<div class="cisub" style="color:var(--terracotta);font-weight:600">${item.size} · ${item.sizeWeight}</div>`:''}
+          ${item.isBundle&&item.desc?`<div class="cisub">${item.desc}</div>`:''}
           <div class="ciprice">£${(item.price*item.qty).toFixed(2)}</div>
           <div class="ciqty">
             <button onclick="cartQ('${item.id}',-1)">−</button>
@@ -774,7 +823,7 @@ function openCheckout(){
 function closeCheckout(){ document.getElementById('coOverlay').classList.remove('open'); }
 function initStripe(){
   if(!stripe){
-    stripe=Stripe('pk_test_REPLACE_WITH_YOUR_PUBLISHABLE_KEY');
+    stripe=Stripe('pk_live_51T6aG7AYAdBa4MYxE2JmRVj9odK3dPdsXFYBuVeE2JuBuOjCDb5afSfGXlSNllb2iH5Q6Wzqf9pQAh8vB8i2oWql00Un3gJ7qC');
     const els=stripe.elements();
     cardEl=els.create('card',{style:{base:{fontFamily:'Jost,sans-serif',fontSize:'16px',color:'#2D2010','::placeholder':{color:'#aaa'}}}});
     cardEl.mount('#card-element');

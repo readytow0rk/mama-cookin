@@ -1,0 +1,101 @@
+HOW TO ADD FOOD IMAGES
+======================
+
+Drop your food photos into this folder using the filename below.
+The website will automatically show your photo instead of the emoji.
+
+Supported formats: .jpg  .jpeg  .png  .webp
+
+--- SOUPS ---
+s1.jpg   Chicken Borsch
+s2.jpg   Chicken Broth
+s3.jpg   Beef Broth
+s4.jpg   Kids' Chicken Star Soup
+s5.jpg   Courgette Cream Soup
+s6.jpg   Fish & Broccoli Soup
+s7.jpg   Wild Mushroom Cream Soup
+s8.jpg   Goulash Soup
+s9.jpg   Meat Solyanka
+s10.jpg  Tom Yam with Chicken
+
+--- MAIN COURSES ---
+m1.jpg   Chicken Bowl
+m2.jpg   Pasta with Bacon & Broccoli
+m3.jpg   Chicken Pilaf
+m4.jpg   Mac & Cheese
+m5.jpg   Pasta Alfredo
+m6.jpg   Georgian Turkey
+m7.jpg   Ajapsandali with Beef
+m8.jpg   Homemade Meatballs
+m9.jpg   Chicken & Cheese Rissoles
+m10.jpg  Pollock in Batter
+m11.jpg  Meatballs in Cream Sauce
+m12.jpg  Classic Beef Stroganoff
+m13.jpg  Braised Pork in Satsebeli
+m14.jpg  Chicken Kiev
+
+--- SIDES ---
+sd1.jpg  Mashed Potatoes
+sd2.jpg  Boiled Pasta
+sd3.jpg  Garlic Roast Potatoes
+sd4.jpg  Rice with Egg
+sd5.jpg  Aubergine with Tomatoes
+sd6.jpg  Quinoa with Curry
+sd7.jpg  Steamed Vegetables
+sd8.jpg  Bulgur with Mushrooms
+
+--- BREAKFASTS ---
+b1.jpg   Butter Pancakes
+b2.jpg   Cottage Cheese Pancakes
+b3.jpg   Ham & Cheese Pancakes
+b4.jpg   Chicken & Cheese Pancakes
+b5.jpg   Scrambled Eggs with Broccoli
+b6.jpg   Tomato Omelette
+b7.jpg   Ham Omelette
+b8.jpg   Cheese Omelette
+b9.jpg   Shakshuka
+b10.jpg  Semolina Porridge
+b11.jpg  Buckwheat Porridge with Milk
+b12.jpg  Oat Porridge on Coconut Milk
+b13.jpg  Rice Porridge with Raisins
+b14.jpg  Buckwheat with Broccoli & Parmesan
+b15.jpg  Classic Syrniki
+b16.jpg  Coconut Syrniki
+b17.jpg  Cottage Cheese Bake
+
+--- SALADS ---
+sl1.jpg  Coleslaw
+sl2.jpg  Courgette & Chicken Salad
+sl3.jpg  Chicken Caesar Salad
+sl4.jpg  Greek Salad
+sl5.jpg  Vinaigrette
+
+--- SANDWICHES ---
+sw1.jpg  Club Sandwich
+sw2.jpg  Croque Monsieur
+sw3.jpg  Avocado & Egg Toast
+
+--- BAKING & DESSERTS ---
+bk1.jpg  Honey Cake (Medovik)
+bk2.jpg  Apple Strudel
+bk3.jpg  Chocolate Lava Cake
+bk4.jpg  Cinnamon Rolls
+bk5.jpg  Pirozhki with Potato
+bk6.jpg  Cheesecake Slice
+
+--- DRINKS ---
+dr1.jpg  Dried Fruit Compote
+dr2.jpg  Cherry Fruit Drink (Mors)
+dr3.jpg  Redcurrant Mors
+dr4.jpg  Fresh Lemonade
+
+--- KIDS ---
+k1.jpg   Kids' Pasta with Tomato Sauce
+k2.jpg   Kids' Chicken Meatballs
+k3.jpg   Kids' Semolina Porridge
+k4.jpg   Kids' Banana Pancakes
+
+--- NEW ITEMS ---
+n1.jpg   Shakshuka Bake
+n2.jpg   Salmon Pasta in Cream
+n3.jpg   Korean Glazed Chicken
