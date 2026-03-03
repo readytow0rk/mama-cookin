@@ -1,0 +1,9 @@
+images add
+
+favicon image
+
+email send all orders
+
+payment review
+
+redeploy cheapname

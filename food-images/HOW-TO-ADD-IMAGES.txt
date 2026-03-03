@@ -2,100 +2,98 @@ HOW TO ADD FOOD IMAGES
 ======================
 
 Drop your food photos into this folder using the filename below.
-The website will automatically show your photo instead of the emoji.
+Use .webp format. The website will show your photo instead of the emoji.
 
-Use .webp format for best quality and speed.
+--- SOUPS / СУПЫ ---
+s1.webp   Chicken Borsch              | Борщ с курицей
+s2.webp   Chicken Broth               | Куриный бульон
+s3.webp   Beef Broth                  | Говяжий бульон
+s4.webp   Kids' Chicken Star Soup     | Суп «Звёздочка» детский
+s5.webp   Courgette Cream Soup        | Суп-пюре из кабачков
+s6.webp   Fish & Broccoli Soup        | Суп из рыбы с брокколи
+s7.webp   Wild Mushroom Cream Soup    | Суп-пюре из лесных грибов
+s8.webp   Goulash Soup                | Суп «Гуляш»
+s9.webp   Meat Solyanka               | Мясная солянка
+s10.webp  Tom Yam with Chicken        | Том Ям с курицей
 
---- SOUPS ---
-s1.webp   Chicken Borsch
-s2.webp   Chicken Broth
-s3.webp   Beef Broth
-s4.webp   Kids' Chicken Star Soup
-s5.webp   Courgette Cream Soup
-s6.webp   Fish & Broccoli Soup
-s7.webp   Wild Mushroom Cream Soup
-s8.webp   Goulash Soup
-s9.webp   Meat Solyanka
-s10.webp  Tom Yam with Chicken
+--- MAIN COURSES / ГОРЯЧЕЕ ---
+m1.webp   Chicken Bowl                | Чаша с курицей
+m2.webp   Pasta with Bacon & Broccoli | Паста с беконом и брокколи
+m3.webp   Chicken Pilaf               | Куриный плов
+m4.webp   Mac & Cheese                | Макароны с сыром
+m5.webp   Pasta Alfredo               | Паста Альфредо
+m6.webp   Georgian Turkey             | Индейка по-грузински
+m7.webp   Ajapsandali with Beef       | Аджапсандали с говядиной
+m8.webp   Homemade Meatballs          | Домашние фрикадельки (3 шт)
+m9.webp   Chicken & Cheese Rissoles   | Куриные котлеты с сыром (3 шт)
+m10.webp  Pollock in Batter           | Минтай в кляре (3 шт)
+m11.webp  Meatballs in Cream Sauce    | Фрикадельки в сливочном соусе (6 шт)
+m12.webp  Classic Beef Stroganoff     | Говядина по-строгановски
+m13.webp  Braised Pork in Satsebeli   | Тушёная свинина в сацебели (3 шт)
+m14.webp  Chicken Kiev                | Котлета по-киевски
 
---- MAIN COURSES ---
-m1.webp   Chicken Bowl
-m2.webp   Pasta with Bacon & Broccoli
-m3.webp   Chicken Pilaf
-m4.webp   Mac & Cheese
-m5.webp   Pasta Alfredo
-m6.webp   Georgian Turkey
-m7.webp   Ajapsandali with Beef
-m8.webp   Homemade Meatballs
-m9.webp   Chicken & Cheese Rissoles
-m10.webp  Pollock in Batter
-m11.webp  Meatballs in Cream Sauce
-m12.webp  Classic Beef Stroganoff
-m13.webp  Braised Pork in Satsebeli
-m14.webp  Chicken Kiev
+--- SIDES / ГАРНИРЫ ---
+sd1.webp  Mashed Potatoes             | Пюре картофельное
+sd2.webp  Boiled Pasta                | Паста отварная
+sd3.webp  Garlic Roast Potatoes       | Картофель с чесноком запечённый
+sd4.webp  Rice with Egg               | Рис с яйцом
+sd5.webp  Aubergine with Tomatoes     | Баклажан с помидорами
+sd6.webp  Quinoa with Curry           | Киноа с карри
+sd7.webp  Steamed Vegetables          | Овощи на пару
+sd8.webp  Bulgur with Mushrooms       | Булгур с грибами
 
---- SIDES ---
-sd1.webp  Mashed Potatoes
-sd2.webp  Boiled Pasta
-sd3.webp  Garlic Roast Potatoes
-sd4.webp  Rice with Egg
-sd5.webp  Aubergine with Tomatoes
-sd6.webp  Quinoa with Curry
-sd7.webp  Steamed Vegetables
-sd8.webp  Bulgur with Mushrooms
+--- BREAKFASTS / ЗАВТРАКИ ---
+b1.webp   Butter Pancakes             | Масляные блины (12 шт)
+b2.webp   Cottage Cheese Pancakes     | Творожные блины (6 шт)
+b3.webp   Ham & Cheese Pancakes       | Блины с ветчиной и сыром (6 шт)
+b4.webp   Chicken & Cheese Pancakes   | Блины с курицей и сыром (6 шт)
+b5.webp   Scrambled Eggs with Broccoli| Яичница с брокколи (3 шт)
+b6.webp   Tomato Omelette             | Омлет с помидорами (3 шт)
+b7.webp   Ham Omelette                | Омлет с ветчиной (3 шт)
+b8.webp   Cheese Omelette             | Омлет с сыром (3 шт)
+b9.webp   Shakshuka                   | Шакшука (3 шт)
+b10.webp  Semolina Porridge           | Манная каша
+b11.webp  Buckwheat Porridge with Milk| Гречневая каша с молоком
+b12.webp  Oat Porridge on Coconut Milk| Овсяная каша на кокосовом молоке
+b13.webp  Rice Porridge with Raisins  | Рисовая каша с изюмом
+b14.webp  Buckwheat with Broccoli     | Гречка с брокколи и пармезаном
+b15.webp  Classic Syrniki             | Сырники классические (12 шт)
+b16.webp  Coconut Syrniki             | Сырники с кокосом (12 шт)
+b17.webp  Cottage Cheese Bake         | Творожная запеканка (3 шт)
 
---- BREAKFASTS ---
-b1.webp   Butter Pancakes
-b2.webp   Cottage Cheese Pancakes
-b3.webp   Ham & Cheese Pancakes
-b4.webp   Chicken & Cheese Pancakes
-b5.webp   Scrambled Eggs with Broccoli
-b6.webp   Tomato Omelette
-b7.webp   Ham Omelette
-b8.webp   Cheese Omelette
-b9.webp   Shakshuka
-b10.webp  Semolina Porridge
-b11.webp  Buckwheat Porridge with Milk
-b12.webp  Oat Porridge on Coconut Milk
-b13.webp  Rice Porridge with Raisins
-b14.webp  Buckwheat with Broccoli & Parmesan
-b15.webp  Classic Syrniki
-b16.webp  Coconut Syrniki
-b17.webp  Cottage Cheese Bake
+--- SALADS / САЛАТЫ ---
+sl1.webp  Coleslaw                    | Коул-слоу
+sl2.webp  Courgette & Chicken Salad   | Салат из кабачков и курицы
+sl3.webp  Chicken Caesar Salad        | Цезарь с курицей
+sl4.webp  Greek Salad                 | Греческий салат
+sl5.webp  Vinaigrette                 | Винегрет
 
---- SALADS ---
-sl1.webp  Coleslaw
-sl2.webp  Courgette & Chicken Salad
-sl3.webp  Chicken Caesar Salad
-sl4.webp  Greek Salad
-sl5.webp  Vinaigrette
+--- SANDWICHES / СЭНДВИЧИ ---
+sw1.webp  Club Sandwich               | Клубный сэндвич
+sw2.webp  Croque Monsieur             | Крок-месье
+sw3.webp  Avocado & Egg Toast         | Тост с авокадо и яйцом
 
---- SANDWICHES ---
-sw1.webp  Club Sandwich
-sw2.webp  Croque Monsieur
-sw3.webp  Avocado & Egg Toast
+--- BAKING & DESSERTS / ВЫПЕЧКА ---
+bk1.webp  Honey Cake (Medovik)        | Медовик
+bk2.webp  Apple Strudel               | Яблочный штрудель
+bk3.webp  Chocolate Lava Cake         | Шоколадный «Лава кейк»
+bk4.webp  Cinnamon Rolls              | Булочки с корицей (4 шт)
+bk5.webp  Pirozhki with Potato        | Пирожки с картофелем (5 шт)
+bk6.webp  Cheesecake Slice            | Чизкейк (кусочек)
 
---- BAKING & DESSERTS ---
-bk1.webp  Honey Cake (Medovik)
-bk2.webp  Apple Strudel
-bk3.webp  Chocolate Lava Cake
-bk4.webp  Cinnamon Rolls
-bk5.webp  Pirozhki with Potato
-bk6.webp  Cheesecake Slice
+--- DRINKS / НАПИТКИ ---
+dr1.webp  Dried Fruit Compote         | Компот из сухофруктов
+dr2.webp  Cherry Fruit Drink (Mors)   | Вишнёвый морс
+dr3.webp  Redcurrant Mors             | Морс из красной смородины
+dr4.webp  Fresh Lemonade              | Домашний лимонад
 
---- DRINKS ---
-dr1.webp  Dried Fruit Compote
-dr2.webp  Cherry Fruit Drink (Mors)
-dr3.webp  Redcurrant Mors
-dr4.webp  Fresh Lemonade
+--- KIDS / ДЕТЯМ ---
+k1.webp   Kids' Pasta with Tomato     | Детская паста с томатным соусом
+k2.webp   Kids' Chicken Meatballs     | Куриные фрикадельки детские
+k3.webp   Kids' Semolina Porridge     | Манная каша детская
+k4.webp   Kids' Banana Pancakes       | Банановые блинчики детские
 
---- KIDS ---
-k1.webp   Kids' Pasta with Tomato Sauce
-k2.webp   Kids' Chicken Meatballs
-k3.webp   Kids' Semolina Porridge
-k4.webp   Kids' Banana Pancakes
-
---- NEW ITEMS ---
-n1.webp   Shakshuka Bake
-n2.webp   Salmon Pasta in Cream
-n3.webp   Korean Glazed Chicken
+--- NEW ITEMS / НОВИНКИ ---
+n1.webp   Shakshuka Bake              | Шакшука запечённая
+n2.webp   Salmon Pasta in Cream       | Паста с лососем в сливках
+n3.webp   Korean Glazed Chicken       | Курица в корейской глазури
