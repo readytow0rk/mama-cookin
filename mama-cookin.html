@@ -614,7 +614,7 @@ const PACKAGES=[
 // 4. Go to Account → General → copy Public Key
 // ⚠️ SERVICE ID: Go to emailjs.com → Email Services → click your Gmail service → copy the ID (starts with "service_")
 const EMAILJS_SERVICE='service_5ndqmxf'; // ← REPLACE THIS with your real service ID from EmailJS dashboard
-const EMAILJS_TEMPLATE='template_zhatscm';
+const EMAILJS_TEMPLATE='template_hqyo69l';
 const EMAILJS_KEY='nZpslawaT163Wayua';
 
 // ─── TRANSLATIONS ────────────────────────────────────────────────────────────
@@ -1038,7 +1038,11 @@ function addBundleToCart(){
     const v=bundleSel[s.key]; if(!v||v==='skip') return null;
     const o=s.options.find(op=>op.id===v); return o?o.name:null;
   }).filter(Boolean).join(', ');
-  cart.push({id:'bundle-'+Date.now(),name:currentPkg.title,desc:names.substring(0,70)+(names.length>70?'…':''),price:total,qty:1,emoji:currentPkg.emoji,isBundle:true});
+  const slotLines=currentPkg.slots.map(s=>{
+    const v=bundleSel[s.key]; if(!v||v==='skip') return `  • ${s.label}: skipped`;
+    const o=s.options.find(op=>op.id===v); return o?`  • ${s.label}: ${o.name}${o.weight?' ('+o.weight+')':''}`:null;
+  }).filter(Boolean).join('\n');
+  cart.push({id:'bundle-'+Date.now(),name:currentPkg.title,desc:names.substring(0,70)+(names.length>70?'…':''),slotLines,price:total,qty:1,emoji:currentPkg.emoji,isBundle:true});
   updateCart(); closeBundleBuilder(); showNotif(`${currentPkg.emoji} ${currentPkg.title} added!`); toggleCart();
 }
 
@@ -1263,7 +1267,10 @@ async function processPayment(){
     ?`${document.getElementById('addr').value}, ${document.getElementById('city').value} ${document.getElementById('post').value}`
     :'Self Pickup';
   const notes=document.getElementById('notes').value;
-  const itemsList=cart.map(i=>`${i.name}${i.size?' ('+i.size+' '+i.sizeWeight+')':''} ×${i.qty} — £${(i.price*i.qty).toFixed(2)}`).join('\n');
+  const itemsList=cart.map(i=>{
+    if(i.isBundle) return `${i.name} ×${i.qty} — £${(i.price*i.qty).toFixed(2)}\n${i.slotLines||i.desc}`;
+    return `${i.name}${i.size?' ('+i.size+' '+i.sizeWeight+')':''} ×${i.qty} — £${(i.price*i.qty).toFixed(2)}`;
+  }).join('\n');
   const disc=getDisc();
 
   // Helper: send order email
