@@ -15,7 +15,8 @@
 :root{--cream:#FDF6EC;--warm:#F5E6C8;--terracotta:#C4623A;--dterra:#9E4A2A;--olive:#5C6B3A;--dark:#1A1208;--text:#2D2010;--lt:#7A6548;--border:#E8D5B0}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text)}
 nav{position:sticky;top:0;z-index:100;background:var(--dark);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:62px;box-shadow:0 2px 20px rgba(0,0,0,.4)}
-.logo{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:var(--warm);cursor:pointer}
+.logo{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:var(--warm);cursor:pointer;display:flex;align-items:center;gap:10px}
+.logo img{height:38px;width:auto;flex-shrink:0}
 .navl{display:flex;gap:22px;list-style:none}
 .navl a{color:#ccc;text-decoration:none;font-size:.8rem;font-weight:500;text-transform:uppercase;letter-spacing:.08em;transition:color .2s}
 .navl a:hover{color:var(--warm)}
@@ -222,7 +223,7 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
 <nav>
   
   <div class="logo" onclick="scrollTo(0,0)">
-    <img src="logo1.png" alt="Mama Cookin" style="height:38px"> Mama Cookin
+    <img src="logo1.png" alt="Mama Cookin"> Mama Cookin
   </div>
   <ul class="navl" id="navLinks">
     <li><a href="#packages">Packages</a></li>
