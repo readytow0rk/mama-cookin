@@ -612,7 +612,8 @@ const PACKAGES=[
 // 2. Add Gmail service → note the Service ID (e.g. 'service_abc123')
 // 3. Create email template with params: to_email, from_name, message → note Template ID
 // 4. Go to Account → General → copy Public Key
-const EMAILJS_SERVICE='template_q9x0n8f';
+// ⚠️ SERVICE ID: Go to emailjs.com → Email Services → click your Gmail service → copy the ID (starts with "service_")
+const EMAILJS_SERVICE='service_5ndqmxf'; // ← REPLACE THIS with your real service ID from EmailJS dashboard
 const EMAILJS_TEMPLATE='template_zhatscm';
 const EMAILJS_KEY='nZpslawaT163Wayua';
 
@@ -763,7 +764,7 @@ const UI={
     co_cart_h:'Your Cart 🛒',co_sub_lbl:'Subtotal',co_checkout:'Proceed to Checkout →',
     co_cart_note:'Min order £20 &nbsp;•&nbsp; Free delivery over £55',
     ps_sub:'Subtotal',ps_disc:'Promo discount',ps_delivery:'Delivery',ps_pickup:'Pickup',ps_total:'Total',
-    notif_add:'Add items first!',notif_min:'Minimum order is £20',notif_fill:'Please fill name and address',
+    notif_add:'Add items first!',notif_min:'Minimum order is £20',notif_fill:'Please fill in all required fields',
     notif_date:'Please select a delivery date',notif_time:'Please select a time slot',
     promo_ok:'✅ 10% discount applied!',promo_fail:'❌ Invalid promo code.',order_placed:'🎉 Order Placed!'},
   ru:{nav:['Пакеты','Отдельные блюда','Как это работает','Вопросы','Контакт'],cart_btn:'Корзина',
@@ -806,7 +807,7 @@ const UI={
     co_cart_h:'Ваша корзина 🛒',co_sub_lbl:'Подытог',co_checkout:'Перейти к оплате →',
     co_cart_note:'Минимальный заказ £20 &nbsp;•&nbsp; Бесплатная доставка от £55',
     ps_sub:'Подытог',ps_disc:'Скидка по промокоду',ps_delivery:'Доставка',ps_pickup:'Самовывоз',ps_total:'Итого',
-    notif_add:'Сначала добавьте блюда!',notif_min:'Минимальный заказ £20',notif_fill:'Пожалуйста, заполните имя и адрес',
+    notif_add:'Сначала добавьте блюда!',notif_min:'Минимальный заказ £20',notif_fill:'Пожалуйста, заполните все обязательные поля',
     notif_date:'Пожалуйста, выберите дату доставки',notif_time:'Пожалуйста, выберите временной слот',
     promo_ok:'✅ Скидка 10% применена!',promo_fail:'❌ Неверный промокод.',order_placed:'🎉 Заказ оформлен!'},
   uk:{nav:['Пакети','Окремі страви','Як це працює','Питання','Контакт'],cart_btn:'Кошик',
@@ -849,7 +850,7 @@ const UI={
     co_cart_h:'Ваш кошик 🛒',co_sub_lbl:'Підсумок',co_checkout:'Перейти до оплати →',
     co_cart_note:'Мінімальне замовлення £20 &nbsp;•&nbsp; Безкоштовна доставка від £55',
     ps_sub:'Підсумок',ps_disc:'Знижка за промокодом',ps_delivery:'Доставка',ps_pickup:'Самовивіз',ps_total:'Разом',
-    notif_add:'Спочатку додайте страви!',notif_min:'Мінімальне замовлення £20',notif_fill:'Будь ласка, заповніть ім\'я та адресу',
+    notif_add:'Спочатку додайте страви!',notif_min:'Мінімальне замовлення £20',notif_fill:'Будь ласка, заповніть усі обов\'язкові поля',
     notif_date:'Будь ласка, оберіть дату доставки',notif_time:'Будь ласка, оберіть часовий слот',
     promo_ok:'✅ Знижку 10% застосовано!',promo_fail:'❌ Невірний промокод.',order_placed:'🎉 Замовлення оформлено!'},
 };
@@ -1212,7 +1213,19 @@ function goCoStep(n){
   document.getElementById('coTitle').textContent=UI[currentLang].co_titles[n];
 }
 function coStep2(){
-  if(deliveryMode==='delivery'&&(!document.getElementById('fn').value||!document.getElementById('addr').value)){ showNotif(UI[currentLang].notif_fill); return; }
+  if(deliveryMode==='delivery'){
+    const fn=document.getElementById('fn').value.trim();
+    const ln=document.getElementById('ln').value.trim();
+    const ph=document.getElementById('ph').value.trim();
+    const addr=document.getElementById('addr').value.trim();
+    const city=document.getElementById('city').value.trim();
+    const post=document.getElementById('post').value.trim();
+    if(!fn||!ln||!ph||!addr||!city||!post){ showNotif(UI[currentLang].notif_fill); return; }
+  } else {
+    const pn=document.getElementById('pickName').value.trim();
+    const pp=document.getElementById('pickPh').value.trim();
+    if(!pn||!pp){ showNotif(UI[currentLang].notif_fill); return; }
+  }
   goCoStep(2);
 }
 function coStep3(){
@@ -1268,8 +1281,9 @@ async function processPayment(){
       `Order placed: ${new Date().toLocaleString('en-GB')}\n`+
       paymentInfo;
     try{
-      await emailjs.send(EMAILJS_SERVICE,EMAILJS_TEMPLATE,{to_email:'caspi.ready.spam@gmail.com',from_name:name,message});
-    }catch(e){console.warn('Email failed:',e);}
+      const result=await emailjs.send(EMAILJS_SERVICE,EMAILJS_TEMPLATE,{to_email:'caspi.ready.spam@gmail.com',from_name:name,message});
+      console.log('Email sent OK:',result.status,result.text);
+    }catch(e){console.error('EmailJS error:',e);}
   }
 
   // Helper: show order success screen
