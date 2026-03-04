@@ -222,11 +222,14 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
 /* MOBILE NAV DROPDOWN */
 .navl.mopen{display:flex!important;flex-direction:column;position:fixed;top:62px;left:0;right:0;background:var(--dark);z-index:99;padding:8px 0 16px;gap:0;border-top:1px solid rgba(255,255,255,.1);box-shadow:0 8px 24px rgba(0,0,0,.4)}
 .navl.mopen li a{display:block;padding:13px 24px;font-size:.92rem;letter-spacing:.04em}
+/* BACK ARROWS — hidden on desktop, shown on mobile */
+.modal-back{display:none;background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--text);padding:4px 10px 4px 0;align-items:center;line-height:1;flex-shrink:0;-webkit-tap-highlight-color:transparent}
+.modal-back-light{color:white}
+/* Hide ✕ close button on mobile — back arrow replaces it */
 @media(max-width:768px){
   nav{padding:0 12px;gap:6px}
   .navl{display:none}
   .hbg{display:flex}
-  /* Cart button: icon + count only, no text label */
   .ncart{padding:9px 12px;font-size:.82rem;gap:5px}
   .ncart-label{display:none}
   .wrap{padding:0 18px}
@@ -234,25 +237,33 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
   .frow{grid-template-columns:1fr}
   .dgrid{grid-template-columns:repeat(3,1fr)}
   .dopts{grid-template-columns:1fr}
-  /* Checkout: bottom sheet on mobile */
-  .coov{padding:0;align-items:flex-end}
-  .comod{max-width:100%;max-height:94vh;max-height:94dvh;border-radius:22px 22px 0 0}
-  .cohdr{padding:18px 18px 0}
-  .cohdr h2{font-size:1.3rem}
-  .cobody{padding:16px 18px 20px}
-  /* Bundle modal on mobile */
-  .bov{padding:0;align-items:flex-end}
-  .bmod{border-radius:22px 22px 0 0;max-width:100%;width:100%;margin:0}
-  .bbody{max-height:52vh;padding:14px 16px}
+  /* Show back arrows, hide ✕ buttons */
+  .modal-back{display:flex}
+  .xbtn-desktop{display:none!important}
+  /* CART: full-width on mobile */
+  .csb{width:100%}
+  .chdr{padding:14px 16px}
+  .chdr h2{font-size:1.1rem}
+  /* CHECKOUT: true full-screen native page feel */
+  .coov{padding:0;background:white;align-items:stretch}
+  .comod{max-width:100%;width:100%;height:100vh;height:100dvh;max-height:100%;border-radius:0}
+  .cohdr{padding:0 16px;height:54px;border-bottom:1px solid var(--border)}
+  .cohdr h2{font-size:1.05rem;flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .cobody{padding:14px 16px 16px}
+  /* BUNDLE BUILDER: true full-screen */
+  .bov{padding:0}
+  .bmod{border-radius:0;max-width:100%;width:100%;margin:0;height:100vh;height:100dvh;display:flex;flex-direction:column}
+  .bbody{max-height:none;flex:1;overflow-y:auto;padding:14px 16px}
   .bopts{grid-template-columns:1fr}
-  .bopt{padding:13px 14px;font-size:.9rem}
-  .bopt-name{font-size:.9rem;line-height:1.4}
-  .bsec-title{font-size:1.05rem;margin-bottom:12px}
-  .bhdr{padding:16px 20px}
-  .bhdr h2{font-size:1.2rem}
-  .bpbar{padding:11px 20px}
-  .bftr{padding:13px 20px 20px;gap:9px}
-  .badd,.bcancel{font-size:.9rem}
+  .bopt{padding:14px;font-size:.92rem}
+  .bopt-name{font-size:.92rem;line-height:1.45}
+  .bsec-title{font-size:1rem;margin-bottom:13px}
+  .bhdr{padding:0 16px;height:54px;flex-shrink:0}
+  .bhdr h2{font-size:1.05rem;flex:1;text-align:center}
+  .bpbar{padding:10px 16px;font-size:.85rem}
+  .bftr{padding:12px 16px max(20px,env(safe-area-inset-bottom));gap:10px;flex-shrink:0}
+  .badd{padding:15px;font-size:.95rem}
+  .bcancel{padding:15px;font-size:.95rem}
 }
 </style>
 </head>
@@ -378,7 +389,11 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
 <!-- CART SIDEBAR -->
 <div class="cov" id="cartOverlay" onclick="toggleCart()"></div>
 <div class="csb" id="cartSidebar">
-  <div class="chdr"><h2 id="co-cart-h">Your Cart 🛒</h2><button class="xbtn" onclick="toggleCart()">✕</button></div>
+  <div class="chdr">
+    <button class="modal-back" onclick="toggleCart()">←</button>
+    <h2 id="co-cart-h">Your Cart 🛒</h2>
+    <button class="xbtn xbtn-desktop" onclick="toggleCart()">✕</button>
+  </div>
   <div class="cbody" id="cartBody"></div>
   <div class="cftr" id="cartFtr" style="display:none">
     <div class="ctotal"><span class="ctlbl" id="co-cart-sub">Subtotal</span><span class="ctamt" id="cartTotalAmt">£0.00</span></div>
@@ -390,7 +405,11 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
 <!-- BUNDLE BUILDER MODAL -->
 <div class="bov" id="bundleOverlay">
   <div class="bmod">
-    <div class="bhdr"><h2 id="bundleTitle">Customise Your Package</h2><button class="xbtn" style="color:white" onclick="closeBundleBuilder()">✕</button></div>
+    <div class="bhdr">
+      <button class="modal-back modal-back-light" onclick="closeBundleBuilder()">←</button>
+      <h2 id="bundleTitle">Customise Your Package</h2>
+      <button class="xbtn xbtn-desktop" style="color:white" onclick="closeBundleBuilder()">✕</button>
+    </div>
     <div class="bpbar"><span id="bundleDesc">Package</span><span>Total: <strong id="bundleTotalPrice">£0.00</strong></span></div>
     <div class="bbody" id="bundleBody"></div>
     <div class="bftr">
@@ -403,7 +422,11 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
 <!-- CHECKOUT MODAL -->
 <div class="coov" id="coOverlay">
   <div class="comod">
-    <div class="cohdr"><h2 id="coTitle">Delivery Details</h2><button class="xbtn" onclick="closeCheckout()">✕</button></div>
+    <div class="cohdr">
+      <button class="modal-back" id="coBackBtn" onclick="coGoBack()">←</button>
+      <h2 id="coTitle">Delivery Details</h2>
+      <button class="xbtn xbtn-desktop" onclick="closeCheckout()">✕</button>
+    </div>
     <div class="cobody">
       <div class="sdots"><div class="sdot active" id="sd1"></div><div class="sdot" id="sd2"></div><div class="sdot" id="sd3"></div></div>
 
@@ -1274,6 +1297,13 @@ function goCoStep(n){
   [1,2,3].forEach(i=>{ document.getElementById('coStep'+i).style.display=i===n?'block':'none'; document.getElementById('sd'+i).classList.toggle('active',i<=n); });
   document.getElementById('coSuccess').style.display='none';
   document.getElementById('coTitle').textContent=UI[currentLang].co_titles[n];
+  // Back arrow: hidden on step 1 (close instead), visible on steps 2 & 3
+  const bb=document.getElementById('coBackBtn');
+  if(bb) bb.style.visibility=n>1?'visible':'hidden';
+}
+function coGoBack(){
+  const cur=[1,2,3].find(i=>document.getElementById('coStep'+i).style.display!=='none')||1;
+  if(cur<=1) closeCheckout(); else goCoStep(cur-1);
 }
 function coStep2(){
   if(deliveryMode==='delivery'){
