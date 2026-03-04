@@ -240,10 +240,11 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
   /* Show back arrows, hide ✕ buttons */
   .modal-back{display:flex}
   .xbtn-desktop{display:none!important}
-  /* CART: full-width on mobile */
-  .csb{width:100%}
-  .chdr{padding:14px 16px}
-  .chdr h2{font-size:1.1rem}
+  /* CART: true full-screen on mobile — hide dark backdrop, cart covers all */
+  .cov{display:none!important}
+  .csb{width:100%;left:0}
+  .chdr{padding:0 16px;height:54px;border-bottom:1px solid var(--border)}
+  .chdr h2{font-size:1.1rem;flex:1;text-align:center}
   /* CHECKOUT: true full-screen native page feel */
   .coov{padding:0;background:white;align-items:stretch}
   .comod{max-width:100%;width:100%;height:100vh;height:100dvh;max-height:100%;border-radius:0}
@@ -1297,13 +1298,14 @@ function goCoStep(n){
   [1,2,3].forEach(i=>{ document.getElementById('coStep'+i).style.display=i===n?'block':'none'; document.getElementById('sd'+i).classList.toggle('active',i<=n); });
   document.getElementById('coSuccess').style.display='none';
   document.getElementById('coTitle').textContent=UI[currentLang].co_titles[n];
-  // Back arrow: hidden on step 1 (close instead), visible on steps 2 & 3
+  // Back arrow always visible — navigates back through steps or reopens cart
   const bb=document.getElementById('coBackBtn');
-  if(bb) bb.style.visibility=n>1?'visible':'hidden';
+  if(bb) bb.style.visibility='visible';
 }
 function coGoBack(){
   const cur=[1,2,3].find(i=>document.getElementById('coStep'+i).style.display!=='none')||1;
-  if(cur<=1) closeCheckout(); else goCoStep(cur-1);
+  if(cur<=1){ closeCheckout(); toggleCart(); } // step 1 ← reopens cart
+  else goCoStep(cur-1);
 }
 function coStep2(){
   if(deliveryMode==='delivery'){
