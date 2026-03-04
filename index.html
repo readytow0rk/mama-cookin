@@ -147,7 +147,7 @@ nav{position:sticky;top:0;z-index:100;background:var(--dark);display:flex;align-
 .ciprice{color:var(--terracotta);font-weight:700;font-size:.86rem;margin-top:3px}
 .ciqty{display:flex;align-items:center;gap:7px;margin-top:7px}
 .ciqty button{background:var(--warm);border:none;width:25px;height:25px;border-radius:50%;cursor:pointer;font-size:.88rem;font-weight:700}
-.cftr{padding:18px;border-top:1px solid var(--border)}
+.cftr{padding:18px;padding-bottom:max(18px,env(safe-area-inset-bottom));border-top:1px solid var(--border);flex-shrink:0}
 .ctotal{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
 .ctlbl{font-weight:500;color:var(--lt);font-size:.88rem}
 .ctamt{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:900;color:var(--terracotta)}
@@ -156,10 +156,10 @@ nav{position:sticky;top:0;z-index:100;background:var(--dark);display:flex;align-
 /* CHECKOUT MODAL */
 .coov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300;display:none;align-items:center;justify-content:center;padding:20px}
 .coov.open{display:flex}
-.comod{background:white;border-radius:22px;width:100%;max-width:560px;max-height:92vh;overflow-y:auto}
-.cohdr{padding:24px 28px 0;display:flex;align-items:center;justify-content:space-between}
+.comod{background:white;border-radius:22px;width:100%;max-width:560px;max-height:92vh;max-height:92dvh;display:flex;flex-direction:column;overflow:hidden}
+.cohdr{padding:24px 28px 0;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
 .cohdr h2{font-family:'Playfair Display',serif;font-size:1.6rem}
-.cobody{padding:22px 28px 28px}
+.cobody{padding:22px 28px 28px;overflow-y:auto;flex:1}
 .sdots{display:flex;gap:6px;margin-bottom:26px}
 .sdot{flex:1;height:4px;border-radius:2px;background:var(--border);transition:background .3s}
 .sdot.active{background:var(--terracotta)}
@@ -188,7 +188,7 @@ nav{position:sticky;top:0;z-index:100;background:var(--dark);display:flex;align-
 .prow{display:flex;justify-content:space-between;padding:4px 0;font-size:.86rem}
 .prow.tot{font-weight:700;font-size:.98rem;border-top:1px solid var(--border);margin-top:6px;padding-top:9px}
 .psec{display:flex;align-items:center;gap:6px;color:var(--lt);font-size:.75rem;margin-top:9px}
-.conav{display:flex;gap:9px;margin-top:22px}
+.conav{display:flex;gap:9px;margin-top:22px;position:sticky;bottom:0;background:white;padding:14px 0 6px;border-top:1px solid var(--border)}
 .bnext{flex:1;padding:13px;background:var(--terracotta);color:white;border:none;border-radius:10px;cursor:pointer;font-family:'Jost',sans-serif;font-size:.9rem;font-weight:700;transition:background .2s}
 .bnext:hover{background:var(--dterra)}
 .bback{padding:13px 17px;background:var(--warm);color:var(--text);border:none;border-radius:10px;cursor:pointer;font-family:'Jost',sans-serif;font-size:.88rem;font-weight:600}
@@ -223,18 +223,27 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
 .navl.mopen{display:flex!important;flex-direction:column;position:fixed;top:62px;left:0;right:0;background:var(--dark);z-index:99;padding:8px 0 16px;gap:0;border-top:1px solid rgba(255,255,255,.1);box-shadow:0 8px 24px rgba(0,0,0,.4)}
 .navl.mopen li a{display:block;padding:13px 24px;font-size:.92rem;letter-spacing:.04em}
 @media(max-width:768px){
-  nav{padding:0 14px;gap:8px}
+  nav{padding:0 12px;gap:6px}
   .navl{display:none}
   .hbg{display:flex}
-  .ncart{padding:8px 13px;font-size:.78rem;gap:5px}
+  /* Cart button: icon + count only, no text label */
+  .ncart{padding:9px 12px;font-size:.82rem;gap:5px}
+  .ncart-label{display:none}
   .wrap{padding:0 18px}
   .hero{padding:65px 18px}
   .frow{grid-template-columns:1fr}
   .dgrid{grid-template-columns:repeat(3,1fr)}
-  .cobody,.cohdr{padding:14px 16px}
   .dopts{grid-template-columns:1fr}
-  .comod{border-radius:16px}
-  .bbody{max-height:55vh;padding:14px 16px}
+  /* Checkout: bottom sheet on mobile */
+  .coov{padding:0;align-items:flex-end}
+  .comod{max-width:100%;max-height:94vh;max-height:94dvh;border-radius:22px 22px 0 0}
+  .cohdr{padding:18px 18px 0}
+  .cohdr h2{font-size:1.3rem}
+  .cobody{padding:16px 18px 20px}
+  /* Bundle modal on mobile */
+  .bov{padding:0;align-items:flex-end}
+  .bmod{border-radius:22px 22px 0 0;max-width:100%;width:100%;margin:0}
+  .bbody{max-height:52vh;padding:14px 16px}
   .bopts{grid-template-columns:1fr}
   .bopt{padding:13px 14px;font-size:.9rem}
   .bopt-name{font-size:.9rem;line-height:1.4}
@@ -242,9 +251,8 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
   .bhdr{padding:16px 20px}
   .bhdr h2{font-size:1.2rem}
   .bpbar{padding:11px 20px}
-  .bftr{padding:13px 20px;gap:9px}
+  .bftr{padding:13px 20px 20px;gap:9px}
   .badd,.bcancel{font-size:.9rem}
-  .bmod{border-radius:18px}
 }
 </style>
 </head>
@@ -272,7 +280,7 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
     <button onclick="setLang('ru')" id="lb-ru" class="lbtn">RU</button>
     <button onclick="setLang('uk')" id="lb-uk" class="lbtn">UK</button>
   </div>
-  <button class="ncart" id="cartBtn" onclick="toggleCart()">🛒 Cart <span class="cc" id="cartCount">0</span></button>
+  <button class="ncart" id="cartBtn" onclick="toggleCart()">🛒 <span class="ncart-label">Cart </span><span class="cc" id="cartCount">0</span></button>
 </nav>
 
 <section class="hero">
