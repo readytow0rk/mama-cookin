@@ -309,7 +309,6 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
     <div class="stat"><div class="sn">5,000+</div><div class="sl">Happy Families</div></div>
     <div class="stat"><div class="sn">4 yrs</div><div class="sl">Delivering Joy</div></div>
     <div class="stat"><div class="sn">100%</div><div class="sl">Fresh Daily</div></div>
-    <div class="stat"><div class="sn">0</div><div class="sl">Preservatives</div></div>
   </div>
 </section>
 
@@ -447,7 +446,7 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
         </div>
         <div id="pickBlock" style="display:none">
           <div class="frow"><div class="fg"><label class="fl" id="co-l-yourname">Your Name</label><input class="fi" id="pickName" placeholder="John Smith"></div><div class="fg"><label class="fl" id="co-l-pickph">Phone</label><input class="fi" id="pickPh" placeholder="+44 7700 900000"></div></div>
-          <div id="co-pickup-info" style="background:var(--warm);border-radius:9px;padding:13px;font-size:.82rem;color:var(--lt)">📍 <strong>Pickup:</strong> 12 Kitchen Lane, London SE1 7PQ<br><span style="margin-top:4px;display:block">🕔 Mon–Fri, 5:00 PM – 8:00 PM</span></div>
+          <div id="co-pickup-info" style="background:var(--warm);border-radius:9px;padding:13px;font-size:.82rem;color:var(--lt)">📍 <strong>Pickup:</strong> 20 Trinity Hall Close, Watford WD24 4GN<br><span style="margin-top:4px;display:block">🕔 Mon–Fri, 5:00 PM – 8:00 PM</span></div>
         </div>
         <div class="conav"><button class="bnext" id="co-btn-date" onclick="coStep2()">Choose Delivery Date →</button></div>
       </div>
@@ -506,43 +505,41 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
 // ═══════════════════════════════════════════════════════════════════════
 // FULL MENU DATA — all dishes translated from mamaprigotovit.ru
 // ═══════════════════════════════════════════════════════════════════════
+const SOUP_SZ=[{label:'2L',weight:'2L',price:20},{label:'3L',weight:'3L',price:28},{label:'4L',weight:'4L',price:35}];
 const SOUPS=[
-  {id:'s1',name:'Chicken Borsch',desc:'Classic beetroot soup with tender chicken, cabbage, sour cream. Also available without meat — just add a note at checkout.',price:8.50,emoji:'🫕',weight:'900g',cat:'soups'},
-  {id:'s2',name:'Chicken Broth',desc:'Light golden broth with chicken, carrots and herbs',price:7.50,emoji:'🍲',weight:'900g',cat:'soups'},
-  {id:'s3',name:'Beef Broth',desc:'Rich slow-cooked beef bone broth with vegetables',price:8.00,emoji:'🥣',weight:'900g',cat:'soups'},
-  {id:'s4',name:"Kids' Chicken Star Soup",desc:'Gentle chicken soup with star pasta, perfect for children',price:7.50,emoji:'⭐',weight:'900g',cat:'soups'},
-  {id:'s5',name:'Courgette Cream Soup',desc:'Velvety blended courgette with cream and fresh herbs',price:8.00,emoji:'🥒',weight:'900g',cat:'soups'},
-  {id:'s6',name:'Fish & Broccoli Soup',desc:'Delicate white fish soup with broccoli and dill',price:9.00,emoji:'🐟',weight:'900g',cat:'soups'},
-  {id:'s7',name:'Wild Mushroom Cream Soup',desc:'Rich creamy soup with wild mushrooms and thyme',price:9.50,emoji:'🍄',weight:'900g',cat:'soups',extra:2.00},
-  {id:'s8',name:'Goulash Soup',desc:'Hearty Hungarian-style beef and paprika soup',price:12.00,emoji:'🥘',weight:'900g',cat:'soups',extra:5.50},
-  {id:'s9',name:'Meat Solyanka',desc:'Traditional Russian sour-savoury soup with mixed meats and pickles',price:12.00,emoji:'🍖',weight:'900g',cat:'soups',extra:5.50},
-  {id:'s10',name:'Tom Yam with Chicken',desc:'Spicy Thai coconut soup with chicken, mushrooms and lemongrass',price:12.00,emoji:'🌶',weight:'900g',cat:'soups',extra:5.50},
+  {id:'s1',name:'Chicken Borsch',desc:'Classic beetroot soup with tender chicken, cabbage, sour cream. Also available without meat — just add a note at checkout.',price:20,emoji:'🫕',weight:'2L',cat:'soups',sizes:SOUP_SZ},
+  {id:'s2',name:'Chicken Broth',desc:'Light golden broth with chicken, carrots and herbs',price:20,emoji:'🍲',weight:'2L',cat:'soups',sizes:SOUP_SZ},
+  {id:'s3',name:'Beef Broth',desc:'Rich slow-cooked beef bone broth with vegetables',price:20,emoji:'🥣',weight:'2L',cat:'soups',sizes:SOUP_SZ},
+  {id:'s4',name:"Kids' Chicken Star Soup",desc:'Gentle chicken soup with star pasta, perfect for children',price:20,emoji:'⭐',weight:'2L',cat:'soups',sizes:SOUP_SZ},
+  {id:'s5',name:'Courgette Cream Soup',desc:'Velvety blended courgette with cream and fresh herbs',price:20,emoji:'🥒',weight:'2L',cat:'soups',sizes:SOUP_SZ},
+  {id:'s6',name:'Fish & Broccoli Soup',desc:'Delicate white fish soup with broccoli and dill',price:20,emoji:'🐟',weight:'2L',cat:'soups',sizes:SOUP_SZ},
+  {id:'s7',name:'Wild Mushroom Cream Soup',desc:'Rich creamy soup with wild mushrooms and thyme',price:20,emoji:'🍄',weight:'2L',cat:'soups',sizes:SOUP_SZ},
+  {id:'s8',name:'Goulash Soup',desc:'Hearty Hungarian-style beef and paprika soup',price:20,emoji:'🥘',weight:'2L',cat:'soups',sizes:SOUP_SZ},
+  {id:'s9',name:'Meat Solyanka',desc:'Traditional Russian sour-savoury soup with mixed meats and pickles',price:20,emoji:'🍖',weight:'2L',cat:'soups',sizes:SOUP_SZ},
+  {id:'s10',name:'Tom Yam with Chicken',desc:'Spicy Thai coconut soup with chicken, mushrooms and lemongrass',price:20,emoji:'🌶',weight:'2L',cat:'soups',sizes:SOUP_SZ},
 ];
+const MAIN_SZ_A=[{label:'700g',weight:'700g',price:18},{label:'1.2kg',weight:'1.2kg',price:22},{label:'1.5kg',weight:'1.5kg',price:28}];
+const MAIN_SZ_B=[{label:'700g',weight:'700g',price:25},{label:'1.2kg',weight:'1.2kg',price:30},{label:'1.5kg',weight:'1.5kg',price:35}];
 const MAINS=[
-  {id:'m1',name:'Chicken Bowl',desc:'Tender chicken with roasted vegetables over grains',price:12.50,emoji:'🍗',weight:'900g',cat:'mains'},
-  {id:'m2',name:'Pasta with Bacon & Broccoli',desc:'Penne with crispy bacon and broccoli in light cream sauce',price:11.50,emoji:'🥓',weight:'900g',cat:'mains'},
-  {id:'m3',name:'Chicken Pilaf',desc:'Fragrant rice pilaf with chicken, carrots and spices',price:11.50,emoji:'🍚',weight:'900g',cat:'mains'},
-  {id:'m4',name:'Mac & Cheese',desc:'Creamy baked macaroni with three-cheese blend',price:11.00,emoji:'🧀',weight:'900g',cat:'mains'},
-  {id:'m5',name:'Pasta Alfredo',desc:'Fettuccine in rich parmesan butter cream sauce',price:11.00,emoji:'🍝',weight:'900g',cat:'mains'},
-  {id:'m6',name:'Georgian Turkey',desc:'Slow-braised turkey in Georgian walnut sauce',price:14.50,emoji:'🦃',weight:'900g',cat:'mains',extra:4.50},
-  {id:'m7',name:'Ajapsandali with Beef',desc:'Slow-cooked beef and vegetable stew Georgian-style',price:18.00,emoji:'🥩',weight:'900g',cat:'mains',extra:10.50},
-  {id:'m8',name:'Homemade Meatballs (3 pcs)',desc:'Classic hand-rolled beef and pork meatballs, tomato sauce',price:10.50,emoji:'🍖',weight:'300g',cat:'mains'},
-  {id:'m9',name:'Chicken & Cheese Rissoles (3 pcs)',desc:'Juicy chicken patties stuffed with bacon and melted cheese',price:10.50,emoji:'🍗',weight:'300g',cat:'mains'},
-  {id:'m10',name:'Pollock in Batter (3 pcs)',desc:'Golden beer-battered pollock fillets, tartar sauce',price:10.50,emoji:'🐟',weight:'300g',cat:'mains'},
-  {id:'m11',name:'Meatballs in Cream Sauce (6 pcs)',desc:'Tender beef meatballs in rich mushroom cream sauce',price:11.50,emoji:'🍢',weight:'360g',cat:'mains'},
-  {id:'m12',name:'Classic Beef Stroganoff',desc:'Tender beef strips in rich mushroom and sour cream sauce',price:13.50,emoji:'🥩',weight:'360g',cat:'mains'},
-  {id:'m13',name:'Braised Pork in Satsebeli (3 pcs)',desc:'Slow-cooked pork in traditional Georgian tomato-herb sauce',price:12.50,emoji:'🥩',weight:'360g',cat:'mains'},
+  {id:'m1',name:'Chicken Bowl',desc:'Tender chicken with roasted vegetables over grains',price:18,emoji:'🍗',weight:'700g',cat:'mains',sizes:MAIN_SZ_A},
+  {id:'m2',name:'Pasta with Bacon & Broccoli',desc:'Penne with crispy bacon and broccoli in light cream sauce',price:18,emoji:'🥓',weight:'700g',cat:'mains',sizes:MAIN_SZ_A},
+  {id:'m3',name:'Chicken Pilaf',desc:'Fragrant rice pilaf with chicken, carrots and spices',price:18,emoji:'🍚',weight:'700g',cat:'mains',sizes:MAIN_SZ_A},
+  {id:'m4',name:'Mac & Cheese',desc:'Creamy baked macaroni with three-cheese blend',price:18,emoji:'🧀',weight:'700g',cat:'mains',sizes:MAIN_SZ_A},
+  {id:'m5',name:'Pasta Alfredo',desc:'Fettuccine in rich parmesan butter cream sauce',price:18,emoji:'🍝',weight:'700g',cat:'mains',sizes:MAIN_SZ_A},
+  {id:'m6',name:'Georgian Turkey',desc:'Slow-braised turkey in Georgian walnut sauce',price:25,emoji:'🦃',weight:'700g',cat:'mains',sizes:MAIN_SZ_B},
+  {id:'m7',name:'Ajapsandali with Beef',desc:'Slow-cooked beef and vegetable stew Georgian-style',price:25,emoji:'🥩',weight:'700g',cat:'mains',sizes:MAIN_SZ_B},
+  {id:'m8',name:'Homemade Meatballs',desc:'Classic hand-rolled beef and pork meatballs, tomato sauce',price:25,emoji:'🍖',weight:'10 pcs',cat:'mains',sizes:[{label:'10 pcs',weight:'10 pcs',price:25},{label:'20 pcs',weight:'20 pcs',price:40}]},
+  {id:'m9',name:'Chicken & Cheese Rissoles',desc:'Juicy chicken patties stuffed with bacon and melted cheese',price:25,emoji:'🍗',weight:'10 pcs',cat:'mains',sizes:[{label:'10 pcs',weight:'10 pcs',price:25},{label:'20 pcs',weight:'20 pcs',price:40}]},
+  {id:'m11',name:'Meatballs in Cream Sauce',desc:'Tender beef meatballs in rich mushroom cream sauce',price:30,emoji:'🍢',weight:'10 pcs',cat:'mains',sizes:[{label:'10 pcs',weight:'10 pcs',price:30},{label:'20 pcs',weight:'20 pcs',price:40}]},
   {id:'m14',name:'Chicken Kiev',desc:'Classic butter-stuffed breaded chicken breast, golden fried',price:14.00,emoji:'🍳',weight:'350g',cat:'mains'},
 ];
+const SIDE_SZ_A=[{label:'900g',weight:'900g',price:8},{label:'1.2kg',weight:'1.2kg',price:11},{label:'1.5kg',weight:'1.5kg',price:15}];
 const SIDES=[
-  {id:'sd1',name:'Mashed Potatoes',desc:'Creamy whipped potatoes with butter and chives',price:5.50,emoji:'🥔',weight:'600g',cat:'sides'},
-  {id:'sd2',name:'Boiled Pasta',desc:'Al dente pasta, lightly buttered, perfect with mains',price:4.50,emoji:'🍝',weight:'600g',cat:'sides'},
-  {id:'sd3',name:'Garlic Roast Potatoes',desc:'Crispy oven-roasted potatoes with garlic and rosemary',price:5.50,emoji:'🥔',weight:'600g',cat:'sides'},
-  {id:'sd4',name:'Rice with Egg',desc:'Fluffy steamed rice with soft-boiled egg and herbs',price:5.00,emoji:'🍚',weight:'600g',cat:'sides'},
-  {id:'sd5',name:'Aubergine with Tomatoes',desc:'Slow-roasted aubergine with cherry tomatoes and basil',price:6.50,emoji:'🍆',weight:'600g',cat:'sides',extra:2.00},
-  {id:'sd6',name:'Quinoa with Curry',desc:'Fluffy quinoa with turmeric, curry spices and vegetables',price:6.50,emoji:'🌾',weight:'600g',cat:'sides',extra:2.00},
-  {id:'sd7',name:'Steamed Vegetables',desc:'Seasonal broccoli, carrots and courgette — perfectly steamed',price:6.50,emoji:'🥦',weight:'600g',cat:'sides',extra:2.00},
-  {id:'sd8',name:'Bulgur with Mushrooms',desc:'Nutty bulgur wheat with sautéed wild mushrooms and herbs',price:7.00,emoji:'🍄',weight:'600g',cat:'sides',extra:3.50},
+  {id:'sd1',name:'Mashed Potatoes',desc:'Creamy whipped potatoes with butter and chives',price:8,emoji:'🥔',weight:'900g',cat:'sides',sizes:SIDE_SZ_A},
+  {id:'sd2',name:'Boiled Pasta',desc:'Al dente pasta, lightly buttered, perfect with mains',price:8,emoji:'🍝',weight:'900g',cat:'sides',sizes:SIDE_SZ_A},
+  {id:'sd3',name:'Garlic Roast Potatoes',desc:'Crispy oven-roasted potatoes with garlic and rosemary',price:11,emoji:'🥔',weight:'700g',cat:'sides',sizes:[{label:'700g',weight:'700g',price:11},{label:'1.2kg',weight:'1.2kg',price:15},{label:'1.5kg',weight:'1.5kg',price:20}]},
+  {id:'sd4',name:'Rice with Egg',desc:'Fluffy steamed rice with soft-boiled egg and herbs',price:11,emoji:'🍚',weight:'700g',cat:'sides',sizes:[{label:'700g',weight:'700g',price:11},{label:'1.2kg',weight:'1.2kg',price:15},{label:'1.5kg',weight:'1.5kg',price:18}]},
+  {id:'sd7',name:'Steamed Vegetables',desc:'Seasonal broccoli, carrots and courgette — perfectly steamed',price:15,emoji:'🥦',weight:'700g',cat:'sides',sizes:[{label:'700g',weight:'700g',price:15},{label:'1.2kg',weight:'1.2kg',price:22},{label:'1.5kg',weight:'1.5kg',price:30}]},
 ];
 const BREAKFASTS=[
   {id:'b1',name:'Butter Pancakes (12 pcs)',desc:'Thin classic Russian blini with butter',price:8.00,emoji:'🫓',weight:'600g',cat:'breakfast'},
@@ -571,25 +568,25 @@ const SALADS=[
 ];
 const BAKING=[
   // Homemade Cookies (large size)
-  {id:'bk1',name:'Condensed Milk Cookies (10 pcs)',desc:'Large homemade cookies with sweet caramelised condensed milk filling',price:20.00,emoji:'🍪',weight:'~300g',cat:'baking'},
-  {id:'bk2',name:'Chocolate Cookies (10 pcs)',desc:'Large homemade cookies — choice of milk, dark or white chocolate',price:20.00,emoji:'🍫',weight:'~300g',cat:'baking'},
-  {id:'bk3',name:'Plain Cookies (10 pcs)',desc:'Large classic shortbread cookies, buttery and golden, no filling',price:10.00,emoji:'🍪',weight:'~250g',cat:'baking'},
-  {id:'bk4',name:'Cottage Cheese Cookies (10 pcs)',desc:'Soft large homemade cookies with sweet cottage cheese filling',price:20.00,emoji:'🍪',weight:'~300g',cat:'baking'},
-  {id:'bk5',name:'Raisin Cookies (10 pcs)',desc:'Large homemade cookies generously filled with juicy raisins',price:15.00,emoji:'🍪',weight:'~300g',cat:'baking'},
+  {id:'bk1',name:'Condensed Milk Cookies',desc:'Large homemade cookies with sweet caramelised condensed milk filling',price:20.00,emoji:'🍪',weight:'10 pcs',cat:'baking',sizes:[{label:'10 pcs',weight:'10 pcs',price:20},{label:'20 pcs',weight:'20 pcs',price:36}]},
+  {id:'bk2',name:'Chocolate Cookies',desc:'Large homemade cookies — choice of milk, dark or white chocolate',price:20.00,emoji:'🍫',weight:'10 pcs',cat:'baking',sizes:[{label:'10 pcs',weight:'10 pcs',price:20},{label:'20 pcs',weight:'20 pcs',price:36}]},
+  {id:'bk3',name:'Plain Cookies',desc:'Large classic shortbread cookies, buttery and golden, no filling',price:10.00,emoji:'🍪',weight:'10 pcs',cat:'baking',sizes:[{label:'10 pcs',weight:'10 pcs',price:10},{label:'20 pcs',weight:'20 pcs',price:18}]},
+  {id:'bk4',name:'Cottage Cheese Cookies',desc:'Soft large homemade cookies with sweet cottage cheese filling',price:20.00,emoji:'🍪',weight:'10 pcs',cat:'baking',sizes:[{label:'10 pcs',weight:'10 pcs',price:20},{label:'20 pcs',weight:'20 pcs',price:36}]},
+  {id:'bk5',name:'Raisin Cookies',desc:'Large homemade cookies generously filled with juicy raisins',price:15.00,emoji:'🍪',weight:'10 pcs',cat:'baking',sizes:[{label:'10 pcs',weight:'10 pcs',price:15},{label:'20 pcs',weight:'20 pcs',price:27}]},
   // Buns & Pies
-  {id:'bk6',name:'Poppy Seed Buns with Milk (10 pcs)',desc:'Soft buns with poppy seed filling, soaked in warm sweetened milk',price:20.00,emoji:'🫓',weight:'~400g',cat:'baking'},
-  {id:'bk7',name:'Cinnamon Rolls "Cinnabon" (10 pcs)',desc:'Fluffy cinnamon rolls with cream cheese glaze',price:20.00,emoji:'🌀',weight:'~400g',cat:'baking'},
-  {id:'bk8',name:'Cherry Pie (700g)',desc:'Homemade pie with sweet-sour cherry filling and golden pastry',price:25.00,emoji:'🍒',weight:'700g',cat:'baking'},
-  {id:'bk9',name:'Apple Pie (700g)',desc:'Classic homemade apple pie with cinnamon and golden pastry',price:25.00,emoji:'🍎',weight:'700g',cat:'baking'},
-  {id:'bk10',name:'Cottage Cheese Buns (10 pcs)',desc:'Soft fluffy buns with sweet cottage cheese filling',price:25.00,emoji:'🥐',weight:'~400g',cat:'baking'},
-  {id:'bk11',name:'Apple Cinnamon Buns (10 pcs)',desc:'Tender buns generously filled with apple and cinnamon',price:25.00,emoji:'🍎',weight:'~400g',cat:'baking'},
-  {id:'bk12',name:'Peach Pie (700g)',desc:'Homemade pie with juicy peach filling and buttery golden pastry',price:25.00,emoji:'🍑',weight:'700g',cat:'baking'},
+  {id:'bk6',name:'Poppy Seed Buns with Milk',desc:'Soft buns with poppy seed filling, soaked in warm sweetened milk',price:20.00,emoji:'🫓',weight:'10 pcs',cat:'baking',sizes:[{label:'10 pcs',weight:'10 pcs',price:20},{label:'20 pcs',weight:'20 pcs',price:36}]},
+  {id:'bk7',name:'Cinnamon Rolls "Cinnabon"',desc:'Fluffy cinnamon rolls with cream cheese glaze',price:20.00,emoji:'🌀',weight:'10 pcs',cat:'baking',sizes:[{label:'10 pcs',weight:'10 pcs',price:20},{label:'20 pcs',weight:'20 pcs',price:36}]},
+  {id:'bk8',name:'Cherry Pie',desc:'Homemade pie with sweet-sour cherry filling and golden pastry',price:25.00,emoji:'🍒',weight:'700g',cat:'baking'},
+  {id:'bk9',name:'Apple Pie',desc:'Classic homemade apple pie with cinnamon and golden pastry',price:25.00,emoji:'🍎',weight:'700g',cat:'baking'},
+  {id:'bk10',name:'Cottage Cheese Buns',desc:'Soft fluffy buns with sweet cottage cheese filling',price:25.00,emoji:'🥐',weight:'10 pcs',cat:'baking',sizes:[{label:'10 pcs',weight:'10 pcs',price:25},{label:'20 pcs',weight:'20 pcs',price:45}]},
+  {id:'bk11',name:'Apple Cinnamon Buns',desc:'Tender buns generously filled with apple and cinnamon',price:25.00,emoji:'🍎',weight:'10 pcs',cat:'baking',sizes:[{label:'10 pcs',weight:'10 pcs',price:25},{label:'20 pcs',weight:'20 pcs',price:45}]},
+  {id:'bk12',name:'Peach Pie',desc:'Homemade pie with juicy peach filling and buttery golden pastry',price:25.00,emoji:'🍑',weight:'700g',cat:'baking'},
   // Whole Cakes (medium size ~800g)
-  {id:'bk13',name:'Berry Cheesecake (800g)',desc:'Creamy medium cheesecake topped with fresh seasonal berries',price:30.00,emoji:'🍰',weight:'800g',cat:'baking'},
-  {id:'bk14',name:'Red Velvet Cake (800g)',desc:'Stunning red velvet sponge with smooth cream cheese frosting',price:40.00,emoji:'🎂',weight:'800g',cat:'baking'},
-  {id:'bk15',name:'Napoleon Cake (800g)',desc:'Classic layered puff pastry cake with rich custard cream',price:35.00,emoji:'🎂',weight:'800g',cat:'baking'},
-  {id:'bk16',name:'Meringue Roll (800g)',desc:'Light and airy meringue roll with whipped cream filling',price:35.00,emoji:'🍥',weight:'800g',cat:'baking'},
-  {id:'bk17',name:'Honey Cake Medovik (800g)',desc:'Traditional layered honey sponge cake with sour cream frosting',price:40.00,emoji:'🍯',weight:'800g',cat:'baking'},
+  {id:'bk13',name:'Berry Cheesecake',desc:'Creamy medium cheesecake topped with fresh seasonal berries',price:30.00,emoji:'🍰',weight:'800g',cat:'baking'},
+  {id:'bk14',name:'Red Velvet Cake',desc:'Stunning red velvet sponge with smooth cream cheese frosting',price:40.00,emoji:'🎂',weight:'800g',cat:'baking'},
+  {id:'bk15',name:'Napoleon Cake',desc:'Classic layered puff pastry cake with rich custard cream',price:35.00,emoji:'🎂',weight:'800g',cat:'baking'},
+  {id:'bk16',name:'Meringue Roll',desc:'Light and airy meringue roll with whipped cream filling',price:35.00,emoji:'🍥',weight:'800g',cat:'baking'},
+  {id:'bk17',name:'Honey Cake Medovik',desc:'Traditional layered honey sponge cake with sour cream frosting',price:40.00,emoji:'🍯',weight:'800g',cat:'baking'},
 ];
 const DRINKS=[
   {id:'dr1',name:'Dried Fruit Compote',desc:'Traditional sweet compote of apricots, prunes and raisins',price:4.50,emoji:'🍹',weight:'1L',cat:'drinks'},
@@ -671,10 +668,10 @@ const ITEM_TRANS={
   m5:{ru:{name:'Паста Альфредо',desc:'Феттучине в насыщенном соусе из пармезана и сливочного масла'},uk:{name:'Паста Альфредо',desc:'Феттучіне у насиченому соусі з пармезану та вершкового масла'}},
   m6:{ru:{name:'Индейка по-грузински',desc:'Тушёная индейка в грузинском ореховом соусе'},uk:{name:'Індичка по-грузинськи',desc:'Тушкована індичка у грузинському горіховому соусі'}},
   m7:{ru:{name:'Аджапсандали с говядиной',desc:'Тушёная говядина с овощами по-грузински'},uk:{name:'Аджапсандалі з яловичиною',desc:'Тушкована яловичина з овочами по-грузинськи'}},
-  m8:{ru:{name:'Домашние фрикадельки (3 шт)',desc:'Классические фрикадельки из говядины и свинины, томатный соус'},uk:{name:'Домашні фрикадельки (3 шт)',desc:'Класичні фрикадельки з яловичини та свинини, томатний соус'}},
-  m9:{ru:{name:'Куриные котлеты с сыром (3 шт)',desc:'Сочные куриные котлеты с беконом и расплавленным сыром'},uk:{name:'Курячі котлети з сиром (3 шт)',desc:'Соковиті курячі котлети з беконом та розплавленим сиром'}},
+  m8:{ru:{name:'Домашние фрикадельки',desc:'Классические фрикадельки из говядины и свинины, томатный соус'},uk:{name:'Домашні фрикадельки',desc:'Класичні фрикадельки з яловичини та свинини, томатний соус'}},
+  m9:{ru:{name:'Куриные котлеты с сыром',desc:'Сочные куриные котлеты с беконом и расплавленным сыром'},uk:{name:'Курячі котлети з сиром',desc:'Соковиті курячі котлети з беконом та розплавленим сиром'}},
   m10:{ru:{name:'Минтай в кляре (3 шт)',desc:'Золотистый минтай в кляре с соусом тартар'},uk:{name:'Мінтай у клярі (3 шт)',desc:'Золотистий мінтай у клярі із соусом тартар'}},
-  m11:{ru:{name:'Фрикадельки в сливочном соусе (6 шт)',desc:'Нежные говяжьи фрикадельки в грибном сливочном соусе'},uk:{name:'Фрикадельки у вершковому соусі (6 шт)',desc:'Ніжні яловичі фрикадельки у грибному вершковому соусі'}},
+  m11:{ru:{name:'Фрикадельки в сливочном соусе',desc:'Нежные говяжьи фрикадельки в грибном сливочном соусе'},uk:{name:'Фрикадельки у вершковому соусі',desc:'Ніжні яловичі фрикадельки у грибному вершковому соусі'}},
   m12:{ru:{name:'Говядина по-строгановски',desc:'Нежная говядина в насыщенном соусе из грибов и сметаны'},uk:{name:'Яловичина по-строганівськи',desc:'Ніжна яловичина у насиченому соусі з грибів та сметани'}},
   m13:{ru:{name:'Тушёная свинина в сацебели (3 шт)',desc:'Свинина в традиционном грузинском томатно-травяном соусе'},uk:{name:'Тушкована свинина у сацебелі (3 шт)',desc:'Свинина у традиційному грузинському томатно-трав\'яному соусі'}},
   m14:{ru:{name:'Котлета по-киевски',desc:'Классическая котлета по-киевски с маслом, в панировке, золотистая'},uk:{name:'Котлета по-київськи',desc:'Класична котлета по-київськи з маслом, у паніровці, золотиста'}},
@@ -682,10 +679,7 @@ const ITEM_TRANS={
   sd2:{ru:{name:'Паста отварная',desc:'Паста аль денте, слегка сдобренная маслом'},uk:{name:'Варена паста',desc:'Паста аль денте, злегка збризкана маслом'}},
   sd3:{ru:{name:'Картофель с чесноком запечённый',desc:'Хрустящий запечённый картофель с чесноком и розмарином'},uk:{name:'Картопля з часником запечена',desc:'Хрустка запечена картопля з часником та розмарином'}},
   sd4:{ru:{name:'Рис с яйцом',desc:'Пышный рис с яйцом всмятку и зеленью'},uk:{name:'Рис з яйцем',desc:'Пишний рис з яйцем всмятку та зеленню'}},
-  sd5:{ru:{name:'Баклажан с помидорами',desc:'Запечённый баклажан с черри и базиликом'},uk:{name:'Баклажан з помідорами',desc:'Запечений баклажан з черрі та базиліком'}},
-  sd6:{ru:{name:'Киноа с карри',desc:'Пышная киноа с куркумой, карри и овощами'},uk:{name:'Кіноа з каррі',desc:'Пишна кіноа з куркумою, каррі та овочами'}},
   sd7:{ru:{name:'Овощи на пару',desc:'Брокколи, морковь и кабачки, приготовленные на пару'},uk:{name:'Овочі на пару',desc:'Броколі, морква та кабачки, приготовлені на пару'}},
-  sd8:{ru:{name:'Булгур с грибами',desc:'Ореховый булгур с обжаренными лесными грибами и травами'},uk:{name:'Булгур з грибами',desc:'Горіховий булгур із обсмаженими грибами та зеленню'}},
   b1:{ru:{name:'Масляные блины (12 шт)',desc:'Тонкие классические блины с маслом'},uk:{name:'Масляні млинці (12 шт)',desc:'Тонкі класичні млинці з маслом'}},
   b2:{ru:{name:'Творожные блины (6 шт)',desc:'Пышные блины с творожной начинкой'},uk:{name:'Сирні млинці (6 шт)',desc:'Пишні млинці з сирною начинкою'}},
   b3:{ru:{name:'Блины с ветчиной и сыром (6 шт)',desc:'Сытные блины с ветчиной и расплавленным сыром'},uk:{name:'Млинці з шинкою та сиром (6 шт)',desc:'Ситні млинці з шинкою та розплавленим сиром'}},
@@ -708,23 +702,23 @@ const ITEM_TRANS={
   sl3:{ru:{name:'Цезарь с курицей',desc:'Романо, курица-гриль, пармезан, гренки, соус Цезарь'},uk:{name:'Цезар з куркою',desc:'Романо, курка-гриль, п��рмезан, грінки, соус Цезар'}},
   sl4:{ru:{name:'Греческий салат',desc:'Помидоры, огурец, маслины, фета, орегано'},uk:{name:'Грецький салат',desc:'Помідори, огірок, маслини, фета, орегано'}},
   sl5:{ru:{name:'Винегрет',desc:'Традиционный салат со свёклой, картофелем, солёными огурцами и горошком'},uk:{name:'Вінегрет',desc:'Традиційний салат з буряком, картоплею, солоними огірками та горохом'}},
-  bk1:{ru:{name:'Печенье с варёной сгущенкой (10 шт)',desc:'Большое домашнее печенье с карамельной начинкой из варёной сгущенки'},uk:{name:'Печиво з вареним згущеним молоком (10 шт)',desc:'Велике домашнє печиво з карамельною начинкою з вареного згущеного молока'}},
-  bk2:{ru:{name:'Шоколадное печенье (10 шт)',desc:'Большое домашнее печенье — молочный, тёмный или белый шоколад'},uk:{name:'Шоколадне печиво (10 шт)',desc:'Велике домашнє печиво — молочний, чорний або білий шоколад'}},
-  bk3:{ru:{name:'Печенье без начинки (10 шт)',desc:'Большое классическое масляное печенье без начинки'},uk:{name:'Печиво без начинки (10 шт)',desc:'Велике класичне масляне печиво без начинки'}},
-  bk4:{ru:{name:'Творожное печенье (10 шт)',desc:'Большое мягкое домашнее печенье с начинкой из творога'},uk:{name:'Сирне печиво (10 шт)',desc:'Велике м\'яке домашнє печиво з начинкою з сиру'}},
-  bk5:{ru:{name:'Печенье с изюмом (10 шт)',desc:'Большое домашнее печенье, щедро наполненное сочным изюмом'},uk:{name:'Печиво з родзинками (10 шт)',desc:'Велике домашнє печиво, щедро наповнене соковитими родзинками'}},
-  bk6:{ru:{name:'Булочки с маком, пропитанные молоком (10 шт)',desc:'Мягкие булочки с маком, пропитанные тёплым сладким молоком'},uk:{name:'Булочки з маком, просочені молоком (10 шт)',desc:'М\'які булочки з маком, просочені теплим солодким молоком'}},
-  bk7:{ru:{name:'Булочки «Синабон» (10 шт)',desc:'Пышные булочки с корицей и кремовой глазурью'},uk:{name:'Булочки «Синабон» (10 шт)',desc:'Пишні булочки з корицею та кремовою глазур\'ю'}},
-  bk8:{ru:{name:'Вишнёвый пирог (700г)',desc:'Домашний пирог с кисло-сладкой вишнёвой начинкой и золотистой корочкой'},uk:{name:'Вишневий пиріг (700г)',desc:'Домашній пиріг з кисло-солодкою вишневою начинкою та золотистою скоринкою'}},
-  bk9:{ru:{name:'Яблочный пирог (700г)',desc:'Классический домашний яблочный пирог с корицей и золотистым тестом'},uk:{name:'Яблучний пиріг (700г)',desc:'Класичний домашній яблучний пиріг з корицею та золотистим тістом'}},
-  bk10:{ru:{name:'Творожные булочки (10 шт)',desc:'Мягкие пышные булочки с нежной творожной начинкой'},uk:{name:'Сирні булочки (10 шт)',desc:'М\'які пишні булочки з ніжною сирною начинкою'}},
-  bk11:{ru:{name:'Булочки «яблоко-корица» (10 шт)',desc:'Нежные булочки, щедро начинённые яблоком и корицей'},uk:{name:'Булочки «яблуко-кориця» (10 шт)',desc:'Ніжні булочки, щедро начинені яблуком та корицею'}},
-  bk12:{ru:{name:'Персиковый пирог (700г)',desc:'Домашний пирог с сочной персиковой начинкой и золотистым тестом'},uk:{name:'Персиковий пиріг (700г)',desc:'Домашній пиріг із соковитою персиковою начинкою та золотистим тістом'}},
-  bk13:{ru:{name:'Чизкейк с ягодами (800г)',desc:'Кремовый чизкейк среднего размера, украшенный свежими сезонными ягодами'},uk:{name:'Чізкейк з ягодами (800г)',desc:'Кремовий чізкейк середнього розміру, прикрашений свіжими сезонними ягодами'}},
-  bk14:{ru:{name:'Красный бархат (800г)',desc:'Эффектный бисквит «красный бархат» с нежным сырным кремом'},uk:{name:'Червоний оксамит (800г)',desc:'Ефектний бісквіт «червоний оксамит» з ніжним сирним кремом'}},
-  bk15:{ru:{name:'Наполеон (800г)',desc:'Классический слоёный торт с нежным заварным кремом'},uk:{name:'Наполеон (800г)',desc:'Класичний листковий торт з ніжним заварним кремом'}},
-  bk16:{ru:{name:'Безейный рулет (800г)',desc:'Лёгкий и воздушный безейный рулет со взбитыми сливками'},uk:{name:'Безейний рулет (800г)',desc:'Легкий і повітряний безейний рулет зі збитими вершками'}},
-  bk17:{ru:{name:'Медовик (800г)',desc:'Традиционный слоёный медовый торт со сметанным кремом'},uk:{name:'Медовик (800г)',desc:'Традиційний листковий медяний торт зі сметанним кремом'}},
+  bk1:{ru:{name:'Печенье с варёной сгущенкой',desc:'Большое домашнее печенье с карамельной начинкой из варёной сгущенки'},uk:{name:'Печиво з вареним згущеним молоком',desc:'Велике домашнє печиво з карамельною начинкою з вареного згущеного молока'}},
+  bk2:{ru:{name:'Шоколадное печенье',desc:'Большое домашнее печенье — молочный, тёмный или белый шоколад'},uk:{name:'Шоколадне печиво',desc:'Велике домашнє печиво — молочний, чорний або білий шоколад'}},
+  bk3:{ru:{name:'Печенье без начинки',desc:'Большое классическое масляное печенье без начинки'},uk:{name:'Печиво без начинки',desc:'Велике класичне масляне печиво без начинки'}},
+  bk4:{ru:{name:'Творожное печенье',desc:'Большое мягкое домашнее печенье с начинкой из творога'},uk:{name:'Сирне печиво',desc:'Велике м\'яке домашнє печиво з начинкою з сиру'}},
+  bk5:{ru:{name:'Печенье с изюмом',desc:'Большое домашнее печенье, щедро наполненное сочным изюмом'},uk:{name:'Печиво з родзинками',desc:'Велике домашнє печиво, щедро наповнене соковитими родзинками'}},
+  bk6:{ru:{name:'Булочки с маком, пропитанные молоком',desc:'Мягкие булочки с маком, пропитанные тёплым сладким молоком'},uk:{name:'Булочки з маком, просочені молоком',desc:'М\'які булочки з маком, просочені теплим солодким молоком'}},
+  bk7:{ru:{name:'Булочки «Синабон»',desc:'Пышные булочки с корицей и кремовой глазурью'},uk:{name:'Булочки «Синабон»',desc:'Пишні булочки з корицею та кремовою глазур\'ю'}},
+  bk8:{ru:{name:'Вишнёвый пирог',desc:'Домашний пирог с кисло-сладкой вишнёвой начинкой и золотистой корочкой'},uk:{name:'Вишневий пиріг',desc:'Домашній пиріг з кисло-солодкою вишневою начинкою та золотистою скоринкою'}},
+  bk9:{ru:{name:'Яблочный пирог',desc:'Классический домашний яблочный пирог с корицей и золотистым тестом'},uk:{name:'Яблучний пиріг',desc:'Класичний домашній яблучний пиріг з корицею та золотистим тістом'}},
+  bk10:{ru:{name:'Творожные булочки',desc:'Мягкие пышные булочки с нежной творожной начинкой'},uk:{name:'Сирні булочки',desc:'М\'які пишні булочки з ніжною сирною начинкою'}},
+  bk11:{ru:{name:'Булочки «яблоко-корица»',desc:'Нежные булочки, щедро начинённые яблоком и корицей'},uk:{name:'Булочки «яблуко-кориця»',desc:'Ніжні булочки, щедро начинені яблуком та корицею'}},
+  bk12:{ru:{name:'Персиковый пирог',desc:'Домашний пирог с сочной персиковой начинкой и золотистым тестом'},uk:{name:'Персиковий пиріг',desc:'Домашній пиріг із соковитою персиковою начинкою та золотистим тістом'}},
+  bk13:{ru:{name:'Чизкейк с ягодами',desc:'Кремовый чизкейк среднего размера, украшенный свежими сезонными ягодами'},uk:{name:'Чізкейк з ягодами',desc:'Кремовий чізкейк середнього розміру, прикрашений свіжими сезонними ягодами'}},
+  bk14:{ru:{name:'Красный бархат',desc:'Эффектный бисквит «красный бархат» с нежным сырным кремом'},uk:{name:'Червоний оксамит',desc:'Ефектний бісквіт «червоний оксамит» з ніжним сирним кремом'}},
+  bk15:{ru:{name:'Наполеон',desc:'Классический слоёный торт с нежным заварным кремом'},uk:{name:'Наполеон',desc:'Класичний листковий торт з ніжним заварним кремом'}},
+  bk16:{ru:{name:'Безейный рулет',desc:'Лёгкий и воздушный безейный рулет со взбитыми сливками'},uk:{name:'Безейний рулет',desc:'Легкий і повітряний безейний рулет зі збитими вершками'}},
+  bk17:{ru:{name:'Медовик',desc:'Традиционный слоёный медовый торт со сметанным кремом'},uk:{name:'Медовик',desc:'Традиційний листковий медяний торт зі сметанним кремом'}},
   dr1:{ru:{name:'Компот из сухофруктов',desc:'Традиционный сладкий компот из абрикосов, чернослива и изюма'},uk:{name:'Компот із сухофруктів',desc:'Традиційний солодкий компот з абрикосів, чорносливу та родзинок'}},
   dr2:{ru:{name:'Вишнёвый морс',desc:'Традиционный русский вишнёвый напиток, слегка сладкий'},uk:{name:'Вишневий морс',desc:'Традиційний вишневий напій, злегка солодкий'}},
   dr3:{ru:{name:'Морс из красной смородины',desc:'Освежающий морс из красной смородины, богатый витамином C'},uk:{name:'Морс із червоної смородини',desc:'Освіжальний морс із червоної смородини, багатий вітаміном C'}},
@@ -792,7 +786,7 @@ const UI={
     co_pickup_name:'Self Pickup',co_pickup_free:'Free',
     co_fn:'First Name',co_ln:'Last Name',co_ph:'Phone',co_addr:'Address',co_city:'City',co_post:'Postcode',
     co_your_name:'Your Name',
-    co_pickup_info:'📍 <strong>Pickup:</strong> 12 Kitchen Lane, London SE1 7PQ<br><span style="margin-top:4px;display:block">🕔 Mon–Fri, 5:00 PM – 8:00 PM</span>',
+    co_pickup_info:'📍 <strong>Pickup:</strong> 20 Trinity Hall Close, Watford WD24 4GN<br><span style="margin-top:4px;display:block">🕔 Mon–Fri, 5:00 PM – 8:00 PM</span>',
     co_date_btn:'Choose Delivery Date →',co_date_lbl:'📅 Delivery Date',co_date_early:'(Earliest: Tomorrow)',
     co_date_note:'ℹ️ Orders until midnight. Mon–Fri delivery only. Kitchen rests Saturday.',
     co_time_lbl:'🕔 Time Slot',co_times:['From 5:00 PM','From 6:00 PM','From 7:00 PM','From 8:00 PM'],
@@ -835,7 +829,7 @@ const UI={
     co_pickup_name:'Самовывоз',co_pickup_free:'Бесплатно',
     co_fn:'Имя',co_ln:'Фамилия',co_ph:'Телефон',co_addr:'Адрес',co_city:'Город',co_post:'Индекс',
     co_your_name:'Ваше имя',
-    co_pickup_info:'📍 <strong>Самовывоз:</strong> 12 Kitchen Lane, London SE1 7PQ<br><span style="margin-top:4px;display:block">🕔 Пн–Пт, 17:00 – 20:00</span>',
+    co_pickup_info:'📍 <strong>Самовывоз:</strong> 20 Trinity Hall Close, Watford WD24 4GN<br><span style="margin-top:4px;display:block">🕔 Пн–Пт, 17:00 – 20:00</span>',
     co_date_btn:'Выбрать дату →',co_date_lbl:'📅 Дата доставки',co_date_early:'(Ближайшая: завтра)',
     co_date_note:'ℹ️ Приём заказов до полуночи. Доставка Пн–Пт. Суббота — выходной.',
     co_time_lbl:'🕔 Время доставки',co_times:['С 17:00','С 18:00','С 19:00','С 20:00'],
@@ -878,7 +872,7 @@ const UI={
     co_pickup_name:'Самовивіз',co_pickup_free:'Безкоштовно',
     co_fn:'Ім\'я',co_ln:'Прізвище',co_ph:'Телефон',co_addr:'Адреса',co_city:'Місто',co_post:'Індекс',
     co_your_name:'Ваше ім\'я',
-    co_pickup_info:'📍 <strong>Самовивіз:</strong> 12 Kitchen Lane, London SE1 7PQ<br><span style="margin-top:4px;display:block">🕔 Пн–Пт, 17:00 – 20:00</span>',
+    co_pickup_info:'📍 <strong>Самовивіз:</strong> 20 Trinity Hall Close, Watford WD24 4GN<br><span style="margin-top:4px;display:block">🕔 Пн–Пт, 17:00 – 20:00</span>',
     co_date_btn:'Обрати дату →',co_date_lbl:'📅 Дата доставки',co_date_early:'(Найближча: завтра)',
     co_date_note:'ℹ️ Прийом замовлень до опівночі. Доставка Пн–Пт. Субота — вихідний.',
     co_time_lbl:'🕔 Час доставки',co_times:['З 17:00','З 18:00','З 19:00','З 20:00'],
@@ -1098,6 +1092,7 @@ const selSizes={};
 function r50(n){return Math.round(n*2)/2;}
 function dblW(w){return w.replace(/(\d+)/,m=>String(parseInt(m)*2));}
 function getItemSizes(item){
+  if(item.sizes) return {sizes:item.sizes,def:item.sizesDef!==undefined?item.sizesDef:0};
   const p=item.price,w=item.weight;
   if(w==='900g') return {sizes:[{label:'Small',weight:'300g',price:r50(p/3)},{label:'Medium',weight:'600g',price:r50(p*2/3)},{label:'Large',weight:'900g',price:p}],def:2};
   if(w==='600g') return {sizes:[{label:'Small',weight:'300g',price:r50(p/2)},{label:'Medium',weight:'600g',price:p},{label:'Large',weight:'900g',price:r50(p*1.5)}],def:1};
