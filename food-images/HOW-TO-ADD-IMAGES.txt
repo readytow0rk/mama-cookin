@@ -64,8 +64,7 @@ b17.webp  Cottage Cheese Bake         | Творожная запеканка (3
 --- SALADS / САЛАТЫ ---
 sl1.webp  Coleslaw                    | Коул-слоу
 sl2.webp  Courgette & Chicken Salad   | Салат из кабачков и курицы
-sl3.webp  Chicken Caesar Salad        | Цезарь с курицей
-sl4.webp  Greek Salad                 | Греческий салат
+sl3.webp  Chicken Caesar Salad        | Цезарь с курицей                | Греческий салат
 sl5.webp  Vinaigrette                 | Винегрет
 
 --- SANDWICHES / СЭНДВИЧИ ---

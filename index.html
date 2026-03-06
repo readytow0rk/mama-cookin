@@ -567,13 +567,7 @@ const SALADS=[
   {id:'sl1',name:'Coleslaw',desc:'Crunchy cabbage and carrot slaw in light dressing',price:6.50,emoji:'🥗',weight:'600g',cat:'salads'},
   {id:'sl2',name:'Courgette & Chicken Salad',desc:'Grilled courgette with chicken breast and herbs',price:8.50,emoji:'🥒',weight:'600g',cat:'salads',extra:3.50},
   {id:'sl3',name:'Chicken Caesar Salad',desc:'Romaine, grilled chicken, parmesan, croutons, Caesar dressing',price:10.00,emoji:'🥗',weight:'600g',cat:'salads',extra:5.50},
-  {id:'sl4',name:'Greek Salad',desc:'Tomatoes, cucumber, olives, feta, oregano vinaigrette',price:8.00,emoji:'🫙',weight:'500g',cat:'salads'},
-  {id:'sl5',name:'Vinaigrette',desc:'Traditional Russian salad with beetroot, potato, pickles and peas',price:7.00,emoji:'🍠',weight:'500g',cat:'salads'},
-];
-const SANDWICHES=[
-  {id:'sw1',name:'Club Sandwich',desc:'Triple-decker with chicken, bacon, lettuce, tomato, mayo',price:9.00,emoji:'🥪',weight:'300g',cat:'sandwiches'},
-  {id:'sw2',name:'Croque Monsieur',desc:'Ham and gruyère toasted sandwich with béchamel top',price:8.00,emoji:'🥪',weight:'250g',cat:'sandwiches'},
-  {id:'sw3',name:'Avocado & Egg Toast',desc:'Sourdough with smashed avocado, poached egg, chilli flakes',price:9.50,emoji:'🥑',weight:'280g',cat:'sandwiches'},
+  {id:'sl5',name:'Vinaigrette',desc:'Traditional salad with beetroot, potato, pickles and peas',price:7.00,emoji:'🍠',weight:'500g',cat:'salads'},
 ];
 const BAKING=[
   // Homemade Cookies (large size)
@@ -603,28 +597,14 @@ const DRINKS=[
   {id:'dr3',name:'Redcurrant Mors',desc:'Refreshing redcurrant drink, rich in Vitamin C',price:4.50,emoji:'🫐',weight:'1L',cat:'drinks'},
   {id:'dr4',name:'Fresh Lemonade',desc:'House-made with real lemons, mint and honey',price:5.00,emoji:'🍋',weight:'1L',cat:'drinks'},
 ];
-const KIDS=[
-  {id:'k1',name:"Kids' Pasta with Tomato Sauce",desc:'Soft pasta in mild homemade tomato sauce',price:7.50,emoji:'🍝',weight:'300g',cat:'kids'},
-  {id:'k2',name:"Kids' Chicken Meatballs",desc:'Tender chicken meatballs in light broth, easy to digest',price:8.00,emoji:'🍡',weight:'300g',cat:'kids'},
-  {id:'k3',name:"Kids' Semolina Porridge",desc:'Smooth creamy semolina with a touch of honey and butter',price:6.00,emoji:'🥣',weight:'400g',cat:'kids'},
-  {id:'k4',name:"Kids' Banana Pancakes",desc:'Soft mini pancakes with banana and honey',price:8.50,emoji:'🍌',weight:'300g',cat:'kids'},
-];
-const NEW_ITEMS=[
-  {id:'n1',name:'Shakshuka Bake',desc:'Oven-baked eggs in smoky tomato sauce with feta',price:9.50,emoji:'🍅',weight:'650g',cat:'new',badge:'NEW'},
-  {id:'n2',name:'Salmon Pasta in Cream',desc:'Penne with fresh salmon in dill cream sauce',price:14.50,emoji:'🐟',weight:'400g',cat:'new',badge:'NEW'},
-  {id:'n3',name:'Korean Glazed Chicken',desc:'Glazed chicken thighs in sweet-spicy Korean sauce',price:13.50,emoji:'🌶',weight:'380g',cat:'new',badge:'NEW'},
-];
-const ALL_ITEMS=[...NEW_ITEMS,...KIDS,...BREAKFASTS,...SALADS,...MAINS,...SIDES,...SOUPS,...SANDWICHES,...BAKING,...DRINKS];
+const ALL_ITEMS=[...BREAKFASTS,...SALADS,...MAINS,...SIDES,...SOUPS,...BAKING,...DRINKS];
 const CATS=[
   {key:'all',label:'All',icon:'🍴'},
-  {key:'new',label:'New This Week',icon:'🆕'},
-  {key:'kids',label:'Kids',icon:'👶'},
   {key:'breakfast',label:'Breakfasts',icon:'🍳'},
   {key:'salads',label:'Salads',icon:'🥗'},
   {key:'mains',label:'Main Courses',icon:'🍗'},
   {key:'sides',label:'Sides & Veg',icon:'🥔'},
   {key:'soups',label:'Soups',icon:'🍜'},
-  {key:'sandwiches',label:'Sandwiches',icon:'🥪'},
   {key:'baking',label:'Baking & Desserts',icon:'🍰'},
   {key:'drinks',label:'Drinks',icon:'🍹'},
 ];
@@ -728,9 +708,6 @@ const ITEM_TRANS={
   sl3:{ru:{name:'Цезарь с курицей',desc:'Романо, курица-гриль, пармезан, гренки, соус Цезарь'},uk:{name:'Цезар з куркою',desc:'Романо, курка-гриль, п��рмезан, грінки, соус Цезар'}},
   sl4:{ru:{name:'Греческий салат',desc:'Помидоры, огурец, маслины, фета, орегано'},uk:{name:'Грецький салат',desc:'Помідори, огірок, маслини, фета, орегано'}},
   sl5:{ru:{name:'Винегрет',desc:'Традиционный салат со свёклой, картофелем, солёными огурцами и горошком'},uk:{name:'Вінегрет',desc:'Традиційний салат з буряком, картоплею, солоними огірками та горохом'}},
-  sw1:{ru:{name:'Клубный сэндвич',desc:'Трёхслойный с курицей, беконом, листьями, томатами и майонезом'},uk:{name:'Клубний сендвіч',desc:'Тришаровий з куркою, беконом, листям, томатами та майонезом'}},
-  sw2:{ru:{name:'Крок-месье',desc:'Тост с ветчиной и сыром грюйер с соусом бешамель'},uk:{name:'Крок-месьє',desc:'Тост з шинкою та сиром грюйєр із соусом бешамель'}},
-  sw3:{ru:{name:'Тост с авокадо и яйцом',desc:'Хлеб на закваске с авокадо, яйцом пашот и хлопьями чили'},uk:{name:'Тост з авокадо та яйцем',desc:'Хліб на заквасці з авокадо, яйцем пашот та пластівцями чилі'}},
   bk1:{ru:{name:'Печенье с варёной сгущенкой (10 шт)',desc:'Большое домашнее печенье с карамельной начинкой из варёной сгущенки'},uk:{name:'Печиво з вареним згущеним молоком (10 шт)',desc:'Велике домашнє печиво з карамельною начинкою з вареного згущеного молока'}},
   bk2:{ru:{name:'Шоколадное печенье (10 шт)',desc:'Большое домашнее печенье — молочный, тёмный или белый шоколад'},uk:{name:'Шоколадне печиво (10 шт)',desc:'Велике домашнє печиво — молочний, чорний або білий шоколад'}},
   bk3:{ru:{name:'Печенье без начинки (10 шт)',desc:'Большое классическое масляное печенье без начинки'},uk:{name:'Печиво без начинки (10 шт)',desc:'Велике класичне масляне печиво без начинки'}},
@@ -752,20 +729,13 @@ const ITEM_TRANS={
   dr2:{ru:{name:'Вишнёвый морс',desc:'Традиционный русский вишнёвый напиток, слегка сладкий'},uk:{name:'Вишневий морс',desc:'Традиційний вишневий напій, злегка солодкий'}},
   dr3:{ru:{name:'Морс из красной смородины',desc:'Освежающий морс из красной смородины, богатый витамином C'},uk:{name:'Морс із червоної смородини',desc:'Освіжальний морс із червоної смородини, багатий вітаміном C'}},
   dr4:{ru:{name:'Домашний лимонад',desc:'Приготовленный дома с настоящими лимонами, мятой и мёдом'},uk:{name:'Домашній лимонад',desc:'Приготовлений вдома зі справжніми лимонами, м\'ятою та медом'}},
-  k1:{ru:{name:'Детская паста с томатным соусом',desc:'Мягкая паста в нежном домашнем томатном соусе'},uk:{name:'Дитяча паста з томатним соусом',desc:'М\'яка паста в ніжному домашньому томатному соусі'}},
-  k2:{ru:{name:'Куриные фрикадельки детские',desc:'Нежные куриные фрикадельки в лёгком бульоне'},uk:{name:'Курячі фрикадельки дитячі',desc:'Ніжні курячі фрикадельки у легкому бульйоні'}},
-  k3:{ru:{name:'Манная каша детская',desc:'Нежная манная каша с мёдом и маслом'},uk:{name:'Манна каша дитяча',desc:'Ніжна манна каша з медом та маслом'}},
-  k4:{ru:{name:'Банановые блинчики детские',desc:'Мягкие мини-блины с бананом и мёдом'},uk:{name:'Бананові млинці дитячі',desc:'М\'які міні-млинці з бананом та медом'}},
-  n1:{ru:{name:'Шакшука запечённая',desc:'Яйца, запечённые в дымном томатном соусе с фетой'},uk:{name:'Шакшука запечена',desc:'Яйця, запечені у димчастому томатному соусі з фетою'}},
-  n2:{ru:{name:'Паста с лососем в сливках',desc:'Пенне со свежим лососем в укропно-сливочном соусе'},uk:{name:'Паста з лососем у вершках',desc:'Пенне зі свіжим лососем у кропово-вершковому соусі'}},
-  n3:{ru:{name:'Курица в корейской глазури',desc:'Куриные бёдра в кисло-сладком корейском соусе'},uk:{name:'Курка в корейській глазурі',desc:'Курячі стегна у кисло-солодкому корейському соусі'}},
 };
 function iName(item){return(currentLang!=='en'&&ITEM_TRANS[item.id]?.[currentLang]?.name)||item.name;}
 function iDesc(item){return(currentLang!=='en'&&ITEM_TRANS[item.id]?.[currentLang]?.desc)||item.desc;}
 
 const CATS_TRANS={
-  ru:{all:'Все',new:'Новинки',kids:'Детям',breakfast:'Завтраки',salads:'Салаты',mains:'Горячее',sides:'Гарниры',soups:'Супы',sandwiches:'Сэндвичи',baking:'Выпечка',drinks:'Напитки'},
-  uk:{all:'Всі',new:'Новинки',kids:'Дітям',breakfast:'Сніданки',salads:'Салати',mains:'Гаряче',sides:'Гарніри',soups:'Супи',sandwiches:'Сендвічі',baking:'Випічка',drinks:'Напої'},
+  ru:{all:'Все',breakfast:'Завтраки',salads:'Салаты',mains:'Горячее',sides:'Гарниры',soups:'Супы',baking:'Выпечка',drinks:'Напитки'},
+  uk:{all:'Всі',breakfast:'Сніданки',salads:'Салати',mains:'Гаряче',sides:'Гарніри',soups:'Супи',baking:'Випічка',drinks:'Напої'},
 };
 const PKG_TRANS={
   daily:{
