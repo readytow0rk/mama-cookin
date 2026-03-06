@@ -947,7 +947,7 @@ function applyTranslations(){
   si('rev-label',t.rev_label); si('rev-title',t.rev_title);
   si('contact-label',t.contact_label); si('contact-title',t.contact_title); si('contact-p',t.contact_p);
   si('faq-label',t.faq_label); si('faq-title',t.faq_title);
-  si('promo-bar',t.promo_bar);
+  updatePromoBar();
   applyCheckoutTranslations();
 }
 function applyCheckoutTranslations(){
@@ -1168,7 +1168,7 @@ function chgQty(cartId,d){
 // ─── CART ────────────────────────────────────────────────────────────────────
 function getSub(){ return cart.reduce((s,i)=>s+i.price*i.qty,0); }
 function getDelFee(){ if(deliveryMode==='pickup') return 0; return getSub()>=55?0:3.99; }
-function getDisc(){ return promoApplied?getSub()*0.1:0; }
+function getDisc(){ return (promoApplied||timerActive)?getSub()*0.1:0; }
 function getGrand(){ return Math.max(0,getSub()-getDisc()+getDelFee()); }
 
 function updateCart(){
@@ -1440,9 +1440,45 @@ function toggleFAQ(i){ document.getElementById('faq'+i).classList.toggle('open')
 // ─── NOTIFICATION ─────────────────────────────────────────────────────────────
 function showNotif(msg){ const n=document.getElementById('notif'); n.textContent=msg; n.classList.add('show'); setTimeout(()=>n.classList.remove('show'),2500); }
 
+// ─── PROMO TIMER ─────────────────────────────────────────────────────────────
+let timerSecs=0, timerActive=false, timerInterval=null;
+function fmtTime(s){return `${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`;}
+function updatePromoBar(){
+  const bar=document.getElementById('promo-bar');
+  if(!bar) return;
+  if(timerActive){
+    const msgs={
+      en:`⏰ <strong>10% OFF</strong> — Order in the next <strong>${fmtTime(timerSecs)}</strong> to save!`,
+      ru:`⏰ <strong>Скидка 10%</strong> — Оформите заказ за <strong>${fmtTime(timerSecs)}</strong> и сэкономьте!`,
+      uk:`⏰ <strong>Знижка 10%</strong> — Оформіть замовлення за <strong>${fmtTime(timerSecs)}</strong> і заощадьте!`
+    };
+    bar.innerHTML=msgs[currentLang]||msgs.en;
+  } else {
+    bar.style.display='none';
+  }
+}
+function startPromoTimer(){
+  const KEY='mc_promo_expiry';
+  let expiry=parseInt(localStorage.getItem(KEY)||'0');
+  if(!expiry||expiry<=Date.now()){
+    expiry=Date.now()+20*60*1000;
+    localStorage.setItem(KEY,expiry);
+  }
+  timerSecs=Math.max(0,Math.round((expiry-Date.now())/1000));
+  timerActive=timerSecs>0;
+  updatePromoBar();
+  if(!timerActive) return;
+  timerInterval=setInterval(()=>{
+    timerSecs=Math.max(0,Math.round((expiry-Date.now())/1000));
+    if(timerSecs>0){updatePromoBar();}
+    else{timerActive=false;clearInterval(timerInterval);updatePromoBar();updateCart();}
+  },1000);
+}
+
 // ─── INIT ─────────────────────────────────────────────────────────────────────
 if(EMAILJS_KEY!=='YOUR_PUBLIC_KEY') emailjs.init(EMAILJS_KEY);
 applyTranslations(); renderPkgs(); renderMenuCats(); renderMenuGrid(); renderFAQ(); updateCart();
+startPromoTimer();
 </script>
 </body>
 </html>
