@@ -51,7 +51,7 @@ nav{position:sticky;top:0;z-index:100;background:var(--dark);display:flex;align-
 .pcard:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(196,98,58,.13);border-color:var(--terracotta)}
 .pcard.feat{border-color:var(--terracotta)}
 .pbadge{position:absolute;top:13px;right:13px;z-index:2;background:var(--terracotta);color:white;padding:3px 11px;border-radius:20px;font-size:.68rem;font-weight:700}
-.pimg{height:170px;display:flex;align-items:center;justify-content:center;font-size:4.2rem}
+.pimg{height:200px;display:flex;align-items:center;justify-content:center;font-size:4.2rem}
 .pimg.c1{background:linear-gradient(135deg,#FEE9D1,#F5C98A)}
 .pimg.c2{background:linear-gradient(135deg,#D4EDBC,#A8D490)}
 .pimg.c3{background:linear-gradient(135deg,#D1E8FE,#88C0EA)}
@@ -480,7 +480,7 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
         </div>
         <div class="fg">
           <label class="fl" id="co-l-promo">Promo Code</label>
-          <div style="display:flex;gap:7px"><input class="fi" id="promo" placeholder="e.g. WELCOME" style="flex:1"><button id="co-btn-apply" onclick="applyPromo()" style="padding:0 16px;background:var(--dark);color:white;border:none;border-radius:10px;cursor:pointer;font-weight:600;font-size:.82rem">Apply</button></div>
+          <div \...style="display:flex;gap:7px"><input class="fi" id="promo" placeholder="e.g. WELCOME" style="flex:1"><button id="co-btn-apply" onclick="applyPromo()" style="padding:0 16px;background:var(--dark);color:white;border:none;border-radius:10px;cursor:pointer;font-weight:600;font-size:.82rem">Apply</button></div>
           <div id="promoMsg" style="font-size:.77rem;margin-top:4px"></div>
         </div>
         <div class="psec" id="co-stripe-note">🔒 Payments encrypted and processed securely via Stripe.</div>
@@ -507,7 +507,7 @@ footer{background:var(--dark);color:#666;padding:42px 40px;text-align:center}
 // FULL MENU DATA — all dishes translated from mamaprigotovit.ru
 // ═══════════════════════════════════════════════════════════════════════
 const SOUPS=[
-  {id:'s1',name:'Chicken Borsch',desc:'Classic beetroot soup with tender chicken, cabbage, sour cream',price:8.50,emoji:'🫕',weight:'900g',cat:'soups'},
+  {id:'s1',name:'Chicken Borsch',desc:'Classic beetroot soup with tender chicken, cabbage, sour cream. Also available without meat — just add a note at checkout.',price:8.50,emoji:'🫕',weight:'900g',cat:'soups'},
   {id:'s2',name:'Chicken Broth',desc:'Light golden broth with chicken, carrots and herbs',price:7.50,emoji:'🍲',weight:'900g',cat:'soups'},
   {id:'s3',name:'Beef Broth',desc:'Rich slow-cooked beef bone broth with vegetables',price:8.00,emoji:'🥣',weight:'900g',cat:'soups'},
   {id:'s4',name:"Kids' Chicken Star Soup",desc:'Gentle chicken soup with star pasta, perfect for children',price:7.50,emoji:'⭐',weight:'900g',cat:'soups'},
@@ -576,12 +576,26 @@ const SANDWICHES=[
   {id:'sw3',name:'Avocado & Egg Toast',desc:'Sourdough with smashed avocado, poached egg, chilli flakes',price:9.50,emoji:'🥑',weight:'280g',cat:'sandwiches'},
 ];
 const BAKING=[
-  {id:'bk1',name:'Honey Cake (Medovik)',desc:'Classic layered honey cake with sour cream frosting',price:7.00,emoji:'🎂',weight:'200g',cat:'baking'},
-  {id:'bk2',name:'Apple Strudel',desc:'Flaky pastry with cinnamon apple filling and raisins',price:6.50,emoji:'🍎',weight:'220g',cat:'baking'},
-  {id:'bk3',name:'Chocolate Lava Cake',desc:'Warm dark chocolate cake with molten centre',price:7.50,emoji:'🍫',weight:'180g',cat:'baking'},
-  {id:'bk4',name:'Cinnamon Rolls (4 pcs)',desc:'Soft yeast buns with cinnamon sugar and cream cheese glaze',price:8.00,emoji:'🥐',weight:'320g',cat:'baking'},
-  {id:'bk5',name:'Pirozhki with Potato (5 pcs)',desc:'Traditional Russian baked buns filled with mashed potato',price:7.50,emoji:'🥟',weight:'350g',cat:'baking'},
-  {id:'bk6',name:'Cheesecake Slice',desc:'New York-style cheesecake on a buttery biscuit base',price:7.00,emoji:'🍰',weight:'180g',cat:'baking'},
+  // Homemade Cookies (large size)
+  {id:'bk1',name:'Condensed Milk Cookies (10 pcs)',desc:'Large homemade cookies with sweet caramelised condensed milk filling',price:20.00,emoji:'🍪',weight:'~300g',cat:'baking'},
+  {id:'bk2',name:'Chocolate Cookies (10 pcs)',desc:'Large homemade cookies — choice of milk, dark or white chocolate',price:20.00,emoji:'🍫',weight:'~300g',cat:'baking'},
+  {id:'bk3',name:'Plain Cookies (10 pcs)',desc:'Large classic shortbread cookies, buttery and golden, no filling',price:10.00,emoji:'🍪',weight:'~250g',cat:'baking'},
+  {id:'bk4',name:'Cottage Cheese Cookies (10 pcs)',desc:'Soft large homemade cookies with sweet cottage cheese filling',price:20.00,emoji:'🍪',weight:'~300g',cat:'baking'},
+  {id:'bk5',name:'Raisin Cookies (10 pcs)',desc:'Large homemade cookies generously filled with juicy raisins',price:15.00,emoji:'🍪',weight:'~300g',cat:'baking'},
+  // Buns & Pies
+  {id:'bk6',name:'Poppy Seed Buns with Milk (10 pcs)',desc:'Soft buns with poppy seed filling, soaked in warm sweetened milk',price:20.00,emoji:'🫓',weight:'~400g',cat:'baking'},
+  {id:'bk7',name:'Cinnamon Rolls "Cinnabon" (10 pcs)',desc:'Fluffy cinnamon rolls with cream cheese glaze',price:20.00,emoji:'🌀',weight:'~400g',cat:'baking'},
+  {id:'bk8',name:'Cherry Pie (700g)',desc:'Homemade pie with sweet-sour cherry filling and golden pastry',price:25.00,emoji:'🍒',weight:'700g',cat:'baking'},
+  {id:'bk9',name:'Apple Pie (700g)',desc:'Classic homemade apple pie with cinnamon and golden pastry',price:25.00,emoji:'🍎',weight:'700g',cat:'baking'},
+  {id:'bk10',name:'Cottage Cheese Buns (10 pcs)',desc:'Soft fluffy buns with sweet cottage cheese filling',price:25.00,emoji:'🥐',weight:'~400g',cat:'baking'},
+  {id:'bk11',name:'Apple Cinnamon Buns (10 pcs)',desc:'Tender buns generously filled with apple and cinnamon',price:25.00,emoji:'🍎',weight:'~400g',cat:'baking'},
+  {id:'bk12',name:'Peach Pie (700g)',desc:'Homemade pie with juicy peach filling and buttery golden pastry',price:25.00,emoji:'🍑',weight:'700g',cat:'baking'},
+  // Whole Cakes (medium size ~800g)
+  {id:'bk13',name:'Berry Cheesecake (800g)',desc:'Creamy medium cheesecake topped with fresh seasonal berries',price:30.00,emoji:'🍰',weight:'800g',cat:'baking'},
+  {id:'bk14',name:'Red Velvet Cake (800g)',desc:'Stunning red velvet sponge with smooth cream cheese frosting',price:40.00,emoji:'🎂',weight:'800g',cat:'baking'},
+  {id:'bk15',name:'Napoleon Cake (800g)',desc:'Classic layered puff pastry cake with rich custard cream',price:35.00,emoji:'🎂',weight:'800g',cat:'baking'},
+  {id:'bk16',name:'Meringue Roll (800g)',desc:'Light and airy meringue roll with whipped cream filling',price:35.00,emoji:'🍥',weight:'800g',cat:'baking'},
+  {id:'bk17',name:'Honey Cake Medovik (800g)',desc:'Traditional layered honey sponge cake with sour cream frosting',price:40.00,emoji:'🍯',weight:'800g',cat:'baking'},
 ];
 const DRINKS=[
   {id:'dr1',name:'Dried Fruit Compote',desc:'Traditional sweet compote of apricots, prunes and raisins',price:4.50,emoji:'🍹',weight:'1L',cat:'drinks'},
@@ -615,65 +629,34 @@ const CATS=[
   {key:'drinks',label:'Drinks',icon:'🍹'},
 ];
 const PACKAGES=[
-  {id:'trial',title:'Trial Package',emoji:'🍱',cc:'c1',badge:'STARTER',portions:'~5 portions',basePrice:29.99,oldPrice:34.99,
-   desc:['1 soup (2 servings)','2 hot main courses','1 side dish (400g)','1 salad or breakfast'],
+  {id:'daily',title:'Daily Meal Box',emoji:'🍱',cc:'c1',badge:'TRY US FIRST',portions:'3 meals',basePrice:20,
+   desc:['Breakfast of your choice','Homemade soup for lunch','Hot main course for dinner','Balanced home-style meals — cooked fresh daily'],
    slots:[
-     {key:'soup1',label:'Soup',options:SOUPS,allowSkip:true,skipDiscount:2,icon:'🍜'},
-     {key:'main1',label:'Main Course 1',options:MAINS,icon:'🍗'},
-     {key:'main2',label:'Main Course 2',options:MAINS,icon:'🍗'},
-     {key:'side1',label:'Side Dish',options:SIDES,allowSkip:true,skipDiscount:1.5,icon:'🥔'},
-     {key:'extra1',label:'Salad or Breakfast',options:[...SALADS,...BREAKFASTS],allowSkip:true,skipDiscount:3,icon:'🍳'},
+     {key:'breakfast1',label:'Breakfast',options:BREAKFASTS,icon:'🍳'},
+     {key:'soup1',label:'Soup',options:SOUPS,icon:'🍜'},
+     {key:'main1',label:'Main Course',options:MAINS,icon:'🍗'},
    ]},
-  {id:'medium',title:'Medium Package',emoji:'🥘',cc:'c2',badge:'POPULAR',portions:'~14 portions',basePrice:69.99,oldPrice:82.99,
-   desc:['2 soups (600g each)','3 hot main courses','2 side dishes (400g each)','2 salads or breakfasts'],
+  {id:'family3day',title:'3-Day Family Meal',emoji:'🍲',cc:'c2',badge:'BEST SELLER',portions:'~18 portions',basePrice:60,
+   desc:['3L homemade soup (borscht, meatball, creamy & more)','Large tray of main dish (plov, stew, meatballs, roast chicken & more)','Feeds a family of 3 — 3 lunches + 3 dinners','Menu can be discussed & customised'],
    slots:[
-     {key:'soup1',label:'Soup 1',options:SOUPS,allowSkip:true,skipDiscount:2,icon:'🍜'},
-     {key:'soup2',label:'Soup 2',options:SOUPS,allowSkip:true,skipDiscount:2,icon:'🍜'},
+     {key:'soup1',label:'Soup',options:SOUPS,icon:'🍜'},
+     {key:'main1',label:'Main Course',options:MAINS,icon:'🍗'},
+   ]},
+  {id:'extended',title:'Extended Family Package',emoji:'👨‍👩‍👧‍👦',cc:'c3',badge:'BIGGEST SAVING',portions:'~35+ portions',basePrice:120,
+   desc:['2 soups (3L each)','4 hot main courses','2 side dishes','2 salads or breakfasts','2 drinks (1L each)','Larger order? Contact us — the more you add, the bigger the discount!'],
+   slots:[
+     {key:'soup1',label:'Soup 1',options:SOUPS,icon:'🍜'},
+     {key:'soup2',label:'Soup 2',options:SOUPS,allowSkip:true,skipDiscount:5,icon:'🍜'},
      {key:'main1',label:'Main Course 1',options:MAINS,icon:'🍗'},
      {key:'main2',label:'Main Course 2',options:MAINS,icon:'🍗'},
      {key:'main3',label:'Main Course 3',options:MAINS,icon:'🍗'},
-     {key:'side1',label:'Side Dish 1',options:SIDES,allowSkip:true,skipDiscount:1.5,icon:'🥔'},
-     {key:'side2',label:'Side Dish 2',options:SIDES,allowSkip:true,skipDiscount:1.5,icon:'🥔'},
-     {key:'extra1',label:'Salad or Breakfast 1',options:[...SALADS,...BREAKFASTS],allowSkip:true,skipDiscount:3,icon:'🍳'},
-     {key:'extra2',label:'Salad or Breakfast 2',options:[...SALADS,...BREAKFASTS],allowSkip:true,skipDiscount:3,icon:'🍳'},
-   ]},
-  {id:'family',title:'Family Package',emoji:'🍲',cc:'c3',badge:'BEST VALUE',portions:'~21 portions',basePrice:109.99,oldPrice:129.99,
-   desc:['2 soups (900g each)','3 hot main courses (9 servings)','2 side dishes (600g each)','2 salads or breakfasts','2 drinks (1L each)'],
-   slots:[
-     {key:'soup1',label:'Soup 1',options:SOUPS,allowSkip:true,skipDiscount:2,icon:'🍜'},
-     {key:'soup2',label:'Soup 2',options:SOUPS,allowSkip:true,skipDiscount:2,icon:'🍜'},
-     {key:'main1',label:'Main Course 1',options:MAINS,icon:'🍗'},
-     {key:'main2',label:'Main Course 2',options:MAINS,icon:'🍗'},
-     {key:'main3',label:'Main Course 3',options:MAINS,icon:'🍗'},
-     {key:'side1',label:'Side Dish 1',options:SIDES,allowSkip:true,skipDiscount:1.5,icon:'🥔'},
-     {key:'side2',label:'Side Dish 2',options:SIDES,allowSkip:true,skipDiscount:1.5,icon:'🥔'},
+     {key:'main4',label:'Main Course 4',options:MAINS,allowSkip:true,skipDiscount:5,icon:'🍗'},
+     {key:'side1',label:'Side Dish 1',options:SIDES,allowSkip:true,skipDiscount:2,icon:'🥔'},
+     {key:'side2',label:'Side Dish 2',options:SIDES,allowSkip:true,skipDiscount:2,icon:'🥔'},
      {key:'extra1',label:'Salad or Breakfast 1',options:[...SALADS,...BREAKFASTS],allowSkip:true,skipDiscount:3,icon:'🍳'},
      {key:'extra2',label:'Salad or Breakfast 2',options:[...SALADS,...BREAKFASTS],allowSkip:true,skipDiscount:3,icon:'🍳'},
      {key:'drink1',label:'Drink 1',options:DRINKS,allowSkip:true,skipDiscount:1,icon:'🍹'},
      {key:'drink2',label:'Drink 2',options:DRINKS,allowSkip:true,skipDiscount:1,icon:'🍹'},
-   ]},
-  {id:'weekly',title:'Weekly Feast',emoji:'👨‍👩‍👧‍👦',cc:'c4',badge:'FAMILY+',portions:'~35 portions',basePrice:169.99,oldPrice:199.99,
-   desc:['4 soups (900g each)','5 hot main courses','3 side dishes (600g each)','3 salads or breakfasts','4 drinks (1L each)'],
-   slots:[
-     {key:'soup1',label:'Soup 1',options:SOUPS,allowSkip:true,skipDiscount:2,icon:'🍜'},
-     {key:'soup2',label:'Soup 2',options:SOUPS,allowSkip:true,skipDiscount:2,icon:'🍜'},
-     {key:'soup3',label:'Soup 3',options:SOUPS,allowSkip:true,skipDiscount:2,icon:'🍜'},
-     {key:'soup4',label:'Soup 4',options:SOUPS,allowSkip:true,skipDiscount:2,icon:'🍜'},
-     {key:'main1',label:'Main Course 1',options:MAINS,icon:'🍗'},
-     {key:'main2',label:'Main Course 2',options:MAINS,icon:'🍗'},
-     {key:'main3',label:'Main Course 3',options:MAINS,icon:'🍗'},
-     {key:'main4',label:'Main Course 4',options:MAINS,icon:'🍗'},
-     {key:'main5',label:'Main Course 5',options:MAINS,icon:'🍗'},
-     {key:'side1',label:'Side Dish 1',options:SIDES,allowSkip:true,skipDiscount:1.5,icon:'🥔'},
-     {key:'side2',label:'Side Dish 2',options:SIDES,allowSkip:true,skipDiscount:1.5,icon:'🥔'},
-     {key:'side3',label:'Side Dish 3',options:SIDES,allowSkip:true,skipDiscount:1.5,icon:'🥔'},
-     {key:'extra1',label:'Salad or Breakfast 1',options:[...SALADS,...BREAKFASTS],allowSkip:true,skipDiscount:3,icon:'🍳'},
-     {key:'extra2',label:'Salad or Breakfast 2',options:[...SALADS,...BREAKFASTS],allowSkip:true,skipDiscount:3,icon:'🍳'},
-     {key:'extra3',label:'Salad or Breakfast 3',options:[...SALADS,...BREAKFASTS],allowSkip:true,skipDiscount:3,icon:'🍳'},
-     {key:'drink1',label:'Drink 1',options:DRINKS,allowSkip:true,skipDiscount:1,icon:'🍹'},
-     {key:'drink2',label:'Drink 2',options:DRINKS,allowSkip:true,skipDiscount:1,icon:'🍹'},
-     {key:'drink3',label:'Drink 3',options:DRINKS,allowSkip:true,skipDiscount:1,icon:'🍹'},
-     {key:'drink4',label:'Drink 4',options:DRINKS,allowSkip:true,skipDiscount:1,icon:'🍹'},
    ]},
 ];
 
@@ -691,7 +674,7 @@ const EMAILJS_KEY='nZpslawaT163Wayua';
 // ─── TRANSLATIONS ────────────────────────────────────────────────────────────
 let currentLang='en';
 const ITEM_TRANS={
-  s1:{ru:{name:'Борщ с курицей',desc:'Классический борщ с нежной курицей, капустой и сметаной'},uk:{name:'Борщ з куркою',desc:'Класичний борщ з ніжною куркою, капустою та сметаною'}},
+  s1:{ru:{name:'Борщ с курицей',desc:'Классический борщ с нежной курицей, капустой и сметаной. Также доступен без мяса — укажите в комментарии к заказу.'},uk:{name:'Борщ з куркою',desc:'Класичний борщ з ніжною куркою, капустою та сметаною. Також доступний без м\'яса — вкажіть у коментарі до замовлення.'}},
   s2:{ru:{name:'Куриный бульон',desc:'Лёгкий золотистый бульон с курицей, морковью и зеленью'},uk:{name:'Курячий бульйон',desc:'Легкий золотистий бульйон з куркою, морквою та зеленню'}},
   s3:{ru:{name:'Говяжий бульон',desc:'Насыщенный говяжий бульон на кости с овощами'},uk:{name:'Яловичий бульйон',desc:'Насичений яловичий кістковий бульйон з овочами'}},
   s4:{ru:{name:'Суп «Звёздочка» детский',desc:'Нежный куриный суп со звёздочками, идеально для детей'},uk:{name:'Суп «Зірочка» дитячий',desc:'Ніжний курячий суп із зірочками, ідеально для дітей'}},
@@ -748,12 +731,23 @@ const ITEM_TRANS={
   sw1:{ru:{name:'Клубный сэндвич',desc:'Трёхслойный с курицей, беконом, листьями, томатами и майонезом'},uk:{name:'Клубний сендвіч',desc:'Тришаровий з куркою, беконом, листям, томатами та майонезом'}},
   sw2:{ru:{name:'Крок-месье',desc:'Тост с ветчиной и сыром грюйер с соусом бешамель'},uk:{name:'Крок-месьє',desc:'Тост з шинкою та сиром грюйєр із соусом бешамель'}},
   sw3:{ru:{name:'Тост с авокадо и яйцом',desc:'Хлеб на закваске с авокадо, яйцом пашот и хлопьями чили'},uk:{name:'Тост з авокадо та яйцем',desc:'Хліб на заквасці з авокадо, яйцем пашот та пластівцями чилі'}},
-  bk1:{ru:{name:'Медовик',desc:'Классический медовый торт со сметанным кремом'},uk:{name:'Медовик',desc:'Класичний медовий торт зі сметанним кремом'}},
-  bk2:{ru:{name:'Яблочный штрудель',desc:'Слоёное тесто с яблочно-коричной начинкой и изюмом'},uk:{name:'Яблучний штрудель',desc:'Листкове тісто з яблучно-корицевою начинкою та родзинками'}},
-  bk3:{ru:{name:'Шоколадный «Лава кейк»',desc:'Тёплый тёмный шоколадный кекс с жидкой начинкой'},uk:{name:'Шоколадний «Лава кейк»',desc:'Тепла темна шоколадна тістечка з рідкою начинкою'}},
-  bk4:{ru:{name:'Булочки с корицей (4 шт)',desc:'Мягкие дрожжевые булочки с корицей и кремовой глазурью'},uk:{name:'Булочки з корицею (4 шт)',desc:'М\'які дріжджові булочки з корицею та кремовою глазур\'ю'}},
-  bk5:{ru:{name:'Пирожки с картофелем (5 шт)',desc:'Традиционные запечённые пирожки с картофельной начинкой'},uk:{name:'Пиріжки з картоплею (5 шт)',desc:'Традиційні запечені пиріжки з картопляною начинкою'}},
-  bk6:{ru:{name:'Чизкейк (кусочек)',desc:'Нью-йоркский чизкейк на хрустящей бисквитной основе'},uk:{name:'Чізкейк (шматочок)',desc:'Нью-йоркський чізкейк на хрусткій бісквітній основі'}},
+  bk1:{ru:{name:'Печенье с варёной сгущенкой (10 шт)',desc:'Большое домашнее печенье с карамельной начинкой из варёной сгущенки'},uk:{name:'Печиво з вареним згущеним молоком (10 шт)',desc:'Велике домашнє печиво з карамельною начинкою з вареного згущеного молока'}},
+  bk2:{ru:{name:'Шоколадное печенье (10 шт)',desc:'Большое домашнее печенье — молочный, тёмный или белый шоколад'},uk:{name:'Шоколадне печиво (10 шт)',desc:'Велике домашнє печиво — молочний, чорний або білий шоколад'}},
+  bk3:{ru:{name:'Печенье без начинки (10 шт)',desc:'Большое классическое масляное печенье без начинки'},uk:{name:'Печиво без начинки (10 шт)',desc:'Велике класичне масляне печиво без начинки'}},
+  bk4:{ru:{name:'Творожное печенье (10 шт)',desc:'Большое мягкое домашнее печенье с начинкой из творога'},uk:{name:'Сирне печиво (10 шт)',desc:'Велике м\'яке домашнє печиво з начинкою з сиру'}},
+  bk5:{ru:{name:'Печенье с изюмом (10 шт)',desc:'Большое домашнее печенье, щедро наполненное сочным изюмом'},uk:{name:'Печиво з родзинками (10 шт)',desc:'Велике домашнє печиво, щедро наповнене соковитими родзинками'}},
+  bk6:{ru:{name:'Булочки с маком, пропитанные молоком (10 шт)',desc:'Мягкие булочки с маком, пропитанные тёплым сладким молоком'},uk:{name:'Булочки з маком, просочені молоком (10 шт)',desc:'М\'які булочки з маком, просочені теплим солодким молоком'}},
+  bk7:{ru:{name:'Булочки «Синабон» (10 шт)',desc:'Пышные булочки с корицей и кремовой глазурью'},uk:{name:'Булочки «Синабон» (10 шт)',desc:'Пишні булочки з корицею та кремовою глазур\'ю'}},
+  bk8:{ru:{name:'Вишнёвый пирог (700г)',desc:'Домашний пирог с кисло-сладкой вишнёвой начинкой и золотистой корочкой'},uk:{name:'Вишневий пиріг (700г)',desc:'Домашній пиріг з кисло-солодкою вишневою начинкою та золотистою скоринкою'}},
+  bk9:{ru:{name:'Яблочный пирог (700г)',desc:'Классический домашний яблочный пирог с корицей и золотистым тестом'},uk:{name:'Яблучний пиріг (700г)',desc:'Класичний домашній яблучний пиріг з корицею та золотистим тістом'}},
+  bk10:{ru:{name:'Творожные булочки (10 шт)',desc:'Мягкие пышные булочки с нежной творожной начинкой'},uk:{name:'Сирні булочки (10 шт)',desc:'М\'які пишні булочки з ніжною сирною начинкою'}},
+  bk11:{ru:{name:'Булочки «яблоко-корица» (10 шт)',desc:'Нежные булочки, щедро начинённые яблоком и корицей'},uk:{name:'Булочки «яблуко-кориця» (10 шт)',desc:'Ніжні булочки, щедро начинені яблуком та корицею'}},
+  bk12:{ru:{name:'Персиковый пирог (700г)',desc:'Домашний пирог с сочной персиковой начинкой и золотистым тестом'},uk:{name:'Персиковий пиріг (700г)',desc:'Домашній пиріг із соковитою персиковою начинкою та золотистим тістом'}},
+  bk13:{ru:{name:'Чизкейк с ягодами (800г)',desc:'Кремовый чизкейк среднего размера, украшенный свежими сезонными ягодами'},uk:{name:'Чізкейк з ягодами (800г)',desc:'Кремовий чізкейк середнього розміру, прикрашений свіжими сезонними ягодами'}},
+  bk14:{ru:{name:'Красный бархат (800г)',desc:'Эффектный бисквит «красный бархат» с нежным сырным кремом'},uk:{name:'Червоний оксамит (800г)',desc:'Ефектний бісквіт «червоний оксамит» з ніжним сирним кремом'}},
+  bk15:{ru:{name:'Наполеон (800г)',desc:'Классический слоёный торт с нежным заварным кремом'},uk:{name:'Наполеон (800г)',desc:'Класичний листковий торт з ніжним заварним кремом'}},
+  bk16:{ru:{name:'Безейный рулет (800г)',desc:'Лёгкий и воздушный безейный рулет со взбитыми сливками'},uk:{name:'Безейний рулет (800г)',desc:'Легкий і повітряний безейний рулет зі збитими вершками'}},
+  bk17:{ru:{name:'Медовик (800г)',desc:'Традиционный слоёный медовый торт со сметанным кремом'},uk:{name:'Медовик (800г)',desc:'Традиційний листковий медяний торт зі сметанним кремом'}},
   dr1:{ru:{name:'Компот из сухофруктов',desc:'Традиционный сладкий компот из абрикосов, чернослива и изюма'},uk:{name:'Компот із сухофруктів',desc:'Традиційний солодкий компот з абрикосів, чорносливу та родзинок'}},
   dr2:{ru:{name:'Вишнёвый морс',desc:'Традиционный русский вишнёвый напиток, слегка сладкий'},uk:{name:'Вишневий морс',desc:'Традиційний вишневий напій, злегка солодкий'}},
   dr3:{ru:{name:'Морс из красной смородины',desc:'Освежающий морс из красной смородины, богатый витамином C'},uk:{name:'Морс із червоної смородини',desc:'Освіжальний морс із червоної смородини, багатий вітаміном C'}},
@@ -774,14 +768,22 @@ const CATS_TRANS={
   uk:{all:'Всі',new:'Новинки',kids:'Дітям',breakfast:'Сніданки',salads:'Салати',mains:'Гаряче',sides:'Гарніри',soups:'Супи',sandwiches:'Сендвічі',baking:'Випічка',drinks:'Напої'},
 };
 const PKG_TRANS={
-  trial:{ru:{title:'Пробный пакет',desc:['1 суп (2 порции)','2 горячих блюда','1 гарнир (400г)','1 салат или завтрак']},uk:{title:'Пробний пакет',desc:['1 суп (2 порції)','2 гарячі страви','1 гарнір (400г)','1 салат або сніданок']}},
-  medium:{ru:{title:'Средний пакет',desc:['2 супа (по 600г)','3 горячих блюда','2 гарнира (по 400г)','2 салата или завтр��ка']},uk:{title:'Середній пакет',desc:['2 супи (по 600г)','3 гарячі страви','2 гарніри (по 400г)','2 салати або сніданки']}},
-  family:{ru:{title:'Семейный пакет',desc:['2 супа (по 900г)','3 горячих блюда (9 порций)','2 гарнира (по 600г)','2 салата или завтрака','2 напитка (по 1л)']},uk:{title:'Сімейний пакет',desc:['2 супи (по 900г)','3 гарячі страви (9 порцій)','2 гарніри (по 600г)','2 салати або сніданки','2 напої (по 1л)']}},
-  weekly:{ru:{title:'Недельный пир',desc:['4 супа (по 900г)','5 горячих блюд','3 гарнира (по 600г)','3 салата или завтрака','4 напитка (по 1л)']},uk:{title:'Тижневий бенкет',desc:['4 супи (по 900г)','5 гарячих страв','3 гарніри (по 600г)','3 салати або сніданки','4 напої (по 1л)']}},
+  daily:{
+    ru:{title:'Дневной набор блюд',desc:['Завтрак на ваш выбор','Домашний суп на обед','Горячее на ужин','Сбалансированные домашние блюда — готовятся свежими каждый день']},
+    uk:{title:'Денний набір страв',desc:['Сніданок на ваш вибір','Домашній суп на обід','Гаряча страва на вечерю','Збалансовані домашні страви — готуються свіжими щодня']},
+  },
+  family3day:{
+    ru:{title:'Семейное меню на 3 дня',desc:['3л домашнего супа (борщ, суп с фрикадельками, крем-суп и др.)','Большой лоток с горячим (плов, тушёное, фрикадельки, курица с картошкой и др.)','На семью из 3 человек — 3 обеда + 3 ужина','Меню обсуждается и корректируется под вас']},
+    uk:{title:'Сімейне меню на 3 дні',desc:['3л домашнього супу (борщ, суп з фрикадельками, крем-суп тощо)','Великий лоток з гарячим (плов, тушковане, фрикадельки, курка з картоплею тощо)','На сім\'ю з 3 осіб — 3 обіди + 3 вечері','Меню обговорюється та коригується під вас']},
+  },
+  extended:{
+    ru:{title:'Расширенный семейный пакет',desc:['2 супа (по 3л)','4 горячих блюда','2 гарнира','2 салата или завтрака','2 напитка (по 1л)','Хотите больше? Напишите нам — чем больше заказ, тем выше скидка!']},
+    uk:{title:'Розширений сімейний пакет',desc:['2 супи (по 3л)','4 гарячі страви','2 гарніри','2 салати або сніданки','2 напої (по 1л)','Хочете більше? Напишіть нам — що більший замовлення, то більша знижка!']},
+  },
 };
 const SLOT_TRANS={
-  ru:{'Soup':'Суп','Main Course':'Горячее','Side Dish':'Гарнир','Salad or Breakfast':'Салат или завтрак','Drink':'Напиток'},
-  uk:{'Soup':'Суп','Main Course':'Гаряча страва','Side Dish':'Гарнір','Salad or Breakfast':'Салат або сніданок','Drink':'Напій'},
+  ru:{'Breakfast':'Завтрак','Soup':'Суп','Main Course':'Горячее','Side Dish':'Гарнир','Salad or Breakfast':'Салат или завтрак','Drink':'Напиток'},
+  uk:{'Breakfast':'Сніданок','Soup':'Суп','Main Course':'Гаряча страва','Side Dish':'Гарнір','Salad or Breakfast':'Салат або сніданок','Drink':'Напій'},
 };
 function tSlot(label){
   if(currentLang==='en') return label;
@@ -1021,17 +1023,19 @@ function renderPkgs(){
     const title=tr?tr.title:p.title;
     const desc=tr?tr.desc:p.desc;
     return `
-    <div class="pcard ${p.id==='medium'?'feat':''}">
+    <div class="pcard ${p.id==='family3day'?'feat':''}">
       <div class="pbadge">${p.badge}</div>
-      <div class="pimg ${p.cc}">${p.emoji}</div>
+      <div class="pimg ${p.cc}" style="position:relative;overflow:hidden">
+        <span style="position:relative;z-index:0">${p.emoji}</span>
+        <img src="food-images/pkg-${p.id}.webp" alt="${p.title}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;border-radius:inherit" onerror="this.remove()">
+      </div>
       <div class="pbody">
         <div class="ptitle">${title}</div>
         <div class="pport">${p.portions}</div>
         <ul class="pdets">${desc.map(d=>`<li>${d}</li>`).join('')}</ul>
         <div class="ppricing">
           <div class="pcur">£${p.basePrice.toFixed(2)}</div>
-          <div class="pold">£${p.oldPrice.toFixed(2)}</div>
-          <div class="psave">${t.pkg_save} ${Math.round((1-p.basePrice/p.oldPrice)*100)}%</div>
+          ${p.oldPrice?`<div class="pold">£${p.oldPrice.toFixed(2)}</div><div class="psave">${t.pkg_save} ${Math.round((1-p.basePrice/p.oldPrice)*100)}%</div>`:''}
         </div>
         <button class="pbtn" onclick="openBundleBuilder('${p.id}')">${t.pkg_btn}</button>
       </div>

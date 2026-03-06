@@ -1,9 +1,9 @@
-images add
+add Vita's receipts from telegram
 
-favicon image
+pay by card and by link show up in the same time meaning neither of them can be completed
 
-email send all orders
+apple pay add 
 
-payment review
+stretched pop up windows on all screen
 
 redeploy cheapname
